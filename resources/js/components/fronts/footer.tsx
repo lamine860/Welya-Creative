@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 export default function Footer() {
     return (
         <footer className="bg-slate-50 py-16 dark:bg-slate-900">
-            <div className="mx-auto max-w-7xl">
+            <div className="mx-auto max-w-7xl px-4 md:px-0">
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-5">
                     <div className="flex flex-col gap-2 md:col-span-2">
                         <Link href="" className="flex items-center">
