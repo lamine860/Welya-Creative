@@ -98,8 +98,6 @@ cd {{ $release }}
 
 @task('deployment_migrate')
 {{ $php }} {{ $release }}/artisan migrate --env={{ $env }} --force --no-interaction
-{{ $php }} {{ $release }}/artisan tenants:migrate --env={{ $env }} --force --no-interaction
-{{ $php }} {{ $release }}/artisan tenants:seed --class=PermissionSeeder --env={{ $env }} --force --no-interaction
 @endtask
 
 @task('deployment_npm')
@@ -109,7 +107,6 @@ cd {{ $release }}
 echo "Running npm..."
 {{ $npm }} run build
 {{ $npm }} run build:ssr
-cp public/build/assets public/tenancy/assets/build/ -r
 @endtask
 
 @task('deployment_cache')
