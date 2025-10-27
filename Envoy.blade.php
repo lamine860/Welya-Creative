@@ -93,7 +93,7 @@ echo "Environment file set up"
 @task('deployment_composer')
 echo "Installing composer dependencies..."
 cd {{ $release }}
-{{ $composer }} install --no-interaction --quiet --prefer-dist --optimize-autoloader
+{{ $composer }} install --no-interaction --quiet --prefer-dist --optimize-autoloader --ignore-platform-reqs
 @endtask
 
 @task('deployment_migrate')
@@ -103,7 +103,7 @@ cd {{ $release }}
 @task('deployment_npm')
 echo "Installing npm dependencies..."
 cd {{ $release }}
-{{ $npm }} install --no-audit --no-fund --silent
+{{ $npm }} install --no-audit --no-fund --silent 
 echo "Running npm..."
 {{ $npm }} run build
 {{ $npm }} run build:ssr
