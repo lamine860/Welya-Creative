@@ -29,7 +29,6 @@ export default function Services() {
         <section className="mx-auto max-w-7xl px-4 py-20 md:px-0">
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
                 <div className="mb-10 space-y-6 md:mb-0">
-                    <span className="section-caption">Services</span>
                     <h2 className="text-3xl font-bold uppercase md:text-5xl">
                         Nous proposons
                     </h2>

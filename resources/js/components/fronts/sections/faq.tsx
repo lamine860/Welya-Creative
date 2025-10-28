@@ -51,7 +51,6 @@ export default function Faq() {
             <div className="mx-auto max-w-7xl px-4 md:px-0">
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-5">
                     <div className="space-y-4 md:col-span-3">
-                        {/* <span className="section-caption">FAQ</span> */}
                         <h2 className="text-3xl font-bold uppercase md:text-5xl">
                             Vos Reponses
                         </h2>
@@ -74,8 +73,8 @@ export default function Faq() {
                     <div className="flex flex-col gap-6 md:col-span-2">
                         <div className="flex flex-col space-y-6 rounded-xl bg-primary p-6 shadow-lg">
                             <img
-                                src="https://cdn.prod.website-files.com/60d73a78b4377b65155c56c3/67fbf75aaa1b8b83e6f63742_Frame-1707478440.png"
-                                className="size-40 rounded-full"
+                                src="/images/teams/contact-avatar.jpg"
+                                className="size-24 rounded-full"
                                 alt=""
                             />
                             <h3 className="text-3xl font-bold text-slate-50">

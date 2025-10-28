@@ -22,9 +22,6 @@ export default function About() {
                         />
                     </div>
                     <div className="space-y-6 md:pb-8">
-                        <span className="section-caption">
-                            À PROPOS DE Welya Creative
-                        </span>
                         <h2 className="heading-2 md:max-w-4/5">
                             Nous fournissons des idées brillantes et ajoutons le
                             mot « succès » à votre marque.
