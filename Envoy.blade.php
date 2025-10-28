@@ -8,7 +8,7 @@ $dotenv->required(['DEPLOY_SERVER', 'DEPLOY_REPOSITORY', 'DEPLOY_PATH'])->notEmp
 echo $e->getMessage();
 exit;
 }
-$down = false;
+$down = true;
 $php = $_ENV['DEPLOY_PHP_CMD'] ?? 'php';
 $npm = $_ENV['DEPLOY_NPM_CMD'] ?? '$HOME/.volta/bin/npm';
 $composer = $_ENV['DEPLOY_COMPOSER_CMD'] ?? 'composer';
@@ -143,7 +143,6 @@ php artisan config:cache
 php artisan route:cache
 php artisan view:cache
 php artisan event:cache
-composer install --optimize-autoloader --no-dev
 @if (isset($down) && $down)
     php artisan up
 @endif
