@@ -75,7 +75,7 @@ export default function Faq() {
                             <img
                                 src="/images/teams/contact-avatar.jpg"
                                 className="size-24 rounded-full"
-                                alt=""
+                                alt="Contact avatar"
                             />
                             <h3 className="text-3xl font-bold text-slate-50">
                                 Réservez un rapide appel d'intro
