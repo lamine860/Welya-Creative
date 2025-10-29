@@ -1,3 +1,4 @@
+import SlideUp from '@/components/animations/slide-up';
 import {
     Carousel,
     CarouselContent,
@@ -46,7 +47,7 @@ const carouselItems = [
 
 export default function Projects() {
     return (
-        <section className="overflow-x-hidden py-16 bg-white dark:bg-slate-900">
+        <section className="overflow-x-hidden bg-white py-16 dark:bg-slate-900">
             <Carousel
                 plugins={[
                     Autoplay({
@@ -55,33 +56,39 @@ export default function Projects() {
                 ]}
             >
                 <div className="mx-auto flex max-w-7xl flex-col md:flex-row md:justify-between">
-                    <h2 className="mb-6 text-3xl font-extrabold uppercase md:text-5xl px-4 md:px-0">
-                        Travaux Récents
-                    </h2>
-                    <div className="flex items-center gap-2 px-4 md:px-4 justify-end">
-                        <CarouselPrevious className="static" />
-                        <CarouselNext className="static" />
-                    </div>
+                    <SlideUp>
+                        <h2 className="mb-6 px-4 text-3xl font-extrabold uppercase md:px-0 md:text-5xl">
+                            Travaux Récents
+                        </h2>
+                    </SlideUp>
+                    <SlideUp>
+                        <div className="flex items-center justify-end gap-2 px-4 md:px-4">
+                            <CarouselPrevious className="static" />
+                            <CarouselNext className="static" />
+                        </div>
+                    </SlideUp>
                 </div>
-                <CarouselContent>
-                    {carouselItems.map((item, index) => (
-                        <CarouselItem key={index} className="md:basis-1/3">
-                            <img
-                                src={item.image}
-                                alt={item.title}
-                                className="h-[520px] w-full rounded-sm object-cover"
-                            />
-                            <div className="p-4">
-                                <h3 className="text-xl font-bold">
-                                    {item.title}
-                                </h3>
-                                <p className="text-muted-foreground">
-                                    Description
-                                </p>
-                            </div>
-                        </CarouselItem>
-                    ))}
-                </CarouselContent>
+                <SlideUp>
+                    <CarouselContent>
+                        {carouselItems.map((item, index) => (
+                            <CarouselItem key={index} className="md:basis-1/3">
+                                <img
+                                    src={item.image}
+                                    alt={item.title}
+                                    className="h-[520px] w-full rounded-sm object-cover"
+                                />
+                                <div className="p-4">
+                                    <h3 className="text-xl font-bold">
+                                        {item.title}
+                                    </h3>
+                                    <p className="text-muted-foreground">
+                                        Description
+                                    </p>
+                                </div>
+                            </CarouselItem>
+                        ))}
+                    </CarouselContent>
+                </SlideUp>
             </Carousel>
         </section>
     );

@@ -1,3 +1,4 @@
+import SlideUp from '@/components/animations/slide-up';
 import { LucideFingerprint } from 'lucide-react';
 import { FaHashtag, FaLock } from 'react-icons/fa';
 import { MdOutlineHighQuality } from 'react-icons/md';
@@ -10,17 +11,21 @@ export default function Hiring() {
         >
             <div className="mx-auto max-w-7xl px-4 md:px-0">
                 <div className="md:max-w-xl">
-                    <h2 className="mb-6 text-3xl font-bold text-slate-50 uppercase md:px-0 md:text-5xl">
-                        Pourquoi choisir Wely Creative ?
-                    </h2>
-                    <p className="text-xl text-slate-100">
-                        Bénéficiez d'un design fiable et de haute qualité sans
-                        avoir à embaucher du personnel interne ou à faire appel
-                        à des freelances.
-                    </p>
+                    <SlideUp>
+                        <h2 className="mb-6 text-3xl font-bold text-slate-50 uppercase md:px-0 md:text-5xl">
+                            Pourquoi choisir Wely Creative ?
+                        </h2>
+                    </SlideUp>
+                    <SlideUp>
+                        <p className="text-xl text-slate-100">
+                            Bénéficiez d'un design fiable et de haute qualité
+                            sans avoir à embaucher du personnel interne ou à
+                            faire appel à des freelances.
+                        </p>
+                    </SlideUp>
                 </div>
                 <div className="relative mt-10 grid grid-cols-1 gap-4 md:grid-cols-5">
-                    <div className="bg-opacity-10 flex flex-col gap-3 rounded-md border border-white bg-white/50 dark:border-slate-500 dark:bg-slate-900/80 bg-clip-padding p-4 backdrop-blur-2xl">
+                    <div className="bg-opacity-10 flex flex-col gap-3 rounded-md border border-white bg-white/50 bg-clip-padding p-4 backdrop-blur-2xl dark:border-slate-500 dark:bg-slate-900/80">
                         <span className="flex size-12 items-center justify-center rounded-2xl bg-amber-600">
                             <FaLock className="size-4 text-slate-50" />
                         </span>
@@ -31,7 +36,7 @@ export default function Hiring() {
                             ni de coûts cachés.
                         </p>
                     </div>
-                    <div className="bg-opacity-10 flex flex-col gap-3 rounded-md border border-white bg-white/50 dark:border-slate-500 dark:bg-slate-900/80 bg-clip-padding p-4 backdrop-blur-2xl">
+                    <div className="bg-opacity-10 flex flex-col gap-3 rounded-md border border-white bg-white/50 bg-clip-padding p-4 backdrop-blur-2xl dark:border-slate-500 dark:bg-slate-900/80">
                         <span className="flex size-12 items-center justify-center rounded-2xl bg-cyan-600">
                             <FaHashtag className="size-4 text-slate-50" />
                         </span>
@@ -42,7 +47,7 @@ export default function Hiring() {
                             occuperons immédiatement.
                         </p>
                     </div>
-                    <div className="bg-opacity-10 flex flex-col gap-3 rounded-md border border-white bg-white/50 dark:border-slate-500 dark:bg-slate-900/80 bg-clip-padding p-4 backdrop-blur-2xl">
+                    <div className="bg-opacity-10 flex flex-col gap-3 rounded-md border border-white bg-white/50 bg-clip-padding p-4 backdrop-blur-2xl dark:border-slate-500 dark:bg-slate-900/80">
                         <span className="flex size-12 items-center justify-center rounded-2xl bg-emerald-600">
                             <MdOutlineHighQuality className="size-4 text-slate-50" />
                         </span>
@@ -52,7 +57,7 @@ export default function Hiring() {
                             main, quand vous en avez besoin.
                         </p>
                     </div>
-                    <div className="bg-opacity-10 flex flex-col gap-3 rounded-md border border-white bg-white/50 dark:border-slate-500 dark:bg-slate-900/80 bg-clip-padding p-4 backdrop-blur-2xl">
+                    <div className="bg-opacity-10 flex flex-col gap-3 rounded-md border border-white bg-white/50 bg-clip-padding p-4 backdrop-blur-2xl dark:border-slate-500 dark:bg-slate-900/80">
                         <span className="flex size-12 items-center justify-center rounded-2xl bg-pink-600">
                             <MdOutlineHighQuality className="size-4 text-slate-50" />
                         </span>
@@ -62,7 +67,7 @@ export default function Hiring() {
                             en pause ou annulez à tout moment.
                         </p>
                     </div>
-                    <div className="bg-opacity-10 flex flex-col gap-3 rounded-md border border-white bg-white/50 dark:border-slate-500 dark:bg-slate-900/80 bg-clip-padding p-4 backdrop-blur-2xl">
+                    <div className="bg-opacity-10 flex flex-col gap-3 rounded-md border border-white bg-white/50 bg-clip-padding p-4 backdrop-blur-2xl dark:border-slate-500 dark:bg-slate-900/80">
                         <span className="flex size-12 items-center justify-center rounded-2xl bg-purple-600">
                             <LucideFingerprint className="size-4 text-slate-50" />
                         </span>

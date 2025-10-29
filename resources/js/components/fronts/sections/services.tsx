@@ -1,3 +1,4 @@
+import SlideUp from '@/components/animations/slide-up';
 import {
     Accordion,
     AccordionContent,
@@ -29,30 +30,39 @@ export default function Services() {
         <section className="mx-auto max-w-7xl px-4 py-20 md:px-0">
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
                 <div className="mb-10 space-y-6 md:mb-0">
-                    <h2 className="text-3xl font-bold uppercase md:text-5xl">
-                        Nous proposons
-                    </h2>
-                    <p className="subtitle">
-                        Tout ce qui touche au design, nous nous en occupons.
-                    </p>
+                    <SlideUp>
+                        <h2 className="text-3xl font-bold uppercase md:text-5xl">
+                            Nous proposons
+                        </h2>
+                    </SlideUp>
+                    <SlideUp>
+                        <p className="subtitle">
+                            Tout ce qui touche au design, nous nous en occupons.
+                        </p>
+                    </SlideUp>
                 </div>
-                <Accordion
-                    type="single"
-                    collapsible
-                    className="w-full"
-                    defaultValue="item-1"
-                >
-                    {services.map((service, index) => (
-                        <AccordionItem value={`item-${index + 1}`} key={index}>
-                            <AccordionTrigger className="text-xl font-bold">
-                                {service.title}
-                            </AccordionTrigger>
-                            <AccordionContent className="text-muted-foreground text-lg">
-                                {service.content}
-                            </AccordionContent>
-                        </AccordionItem>
-                    ))}
-                </Accordion>
+                <SlideUp>
+                    <Accordion
+                        type="single"
+                        collapsible
+                        className="w-full"
+                        defaultValue="item-1"
+                    >
+                        {services.map((service, index) => (
+                            <AccordionItem
+                                value={`item-${index + 1}`}
+                                key={index}
+                            >
+                                <AccordionTrigger className="text-xl font-bold">
+                                    {service.title}
+                                </AccordionTrigger>
+                                <AccordionContent className="text-lg text-muted-foreground">
+                                    {service.content}
+                                </AccordionContent>
+                            </AccordionItem>
+                        ))}
+                    </Accordion>
+                </SlideUp>
             </div>
         </section>
     );
