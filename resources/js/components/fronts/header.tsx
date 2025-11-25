@@ -1,6 +1,7 @@
 import AppLogo from '@/components/app-logo';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { home } from '@/routes';
 import { Link } from '@inertiajs/react';
 import { useState } from 'react';
 import { HiDotsHorizontal } from 'react-icons/hi';
@@ -9,8 +10,8 @@ import { IoIosCall, IoIosCloseCircleOutline } from 'react-icons/io';
 export default function Header() {
     const [mobileMenuOpen, toggleMobileMenu] = useState(false);
     const navLinks = [
-        { name: 'Accueil', href: '#' },
-        { name: 'Services', href: '#' },
+        { name: 'Accueil', href: '/' },
+        { name: 'Services', href: '/services' },
         { name: 'Portfolio', href: '#' },
         { name: 'À propos', href: '#' },
         { name: 'Blog', href: '#' },
@@ -18,7 +19,7 @@ export default function Header() {
     return (
         <header className="sticky z-40 flex items-center overflow-hidden bg-white px-6 py-6 md:top-0 md:mx-auto md:px-8 dark:bg-slate-800">
             <div className="mx-auto flex w-full max-w-7xl items-center justify-between">
-                <Link href="" className="flex items-center">
+                <Link href={home()} className="flex items-center">
                     <AppLogo />
                 </Link>
                 <div className="hidden md:flex">
