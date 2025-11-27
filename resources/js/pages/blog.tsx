@@ -38,7 +38,7 @@ const demoData = {
 export default function Blog() {
     return (
         <FrontLayout>
-            <Head title="Welcome" />
+            <Head title="Blog" />
             <div className="mx-auto max-w-7xl px-4 md:px-0">
                 <SlideUp>
                     <Blog8 {...demoData} />

@@ -5,6 +5,7 @@ use Inertia\Inertia;
 
 Route::get('/', fn() => inertia('welcome'))->name('home');
 Route::get('blog', fn() => inertia('blog'))->name('blog');
+Route::get('services', fn() => inertia('services'))->name('services');
 
 
 Route::middleware(['auth', 'verified'])->group(function () {
