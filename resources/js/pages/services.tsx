@@ -2,17 +2,22 @@ import SlideUp from '@/components/animations/slide-up';
 import FrontLayout from '@/layouts/front-layout';
 import { Head } from '@inertiajs/react';
 
-export default function Blog() {
+export default function Services() {
     return (
         <FrontLayout>
             <Head title="Services" />
-            <header className="min-h-[80vh] pt-16">
+            <header className="min-h-[50vh] pt-16">
                 <div className="mx-auto max-w-7xl px-4 md:px-0">
                     <SlideUp>
                         <h1 className="text-4xl leading-snug font-bold uppercase md:text-7xl">
+                            Nos services
+                        </h1>
+                    </SlideUp>
+                    <SlideUp>
+                        <p className="text-xl text-muted-foreground md:max-w-3xl md:text-2xl">
                             Nous créons des expériences numériques inoubliables
                             grâce à nos services haut de gamme.
-                        </h1>
+                        </p>
                     </SlideUp>
                 </div>
             </header>
@@ -80,8 +85,7 @@ export default function Blog() {
                             </SlideUp>
                         </div>
                     </div>
-
-                    <div className="space-y-16 py-24">
+                    <div className="space-y-16 pt-24">
                         <div className="grid gap-8 md:grid-cols-2">
                             <div className="flex flex-col gap-4 md:flex-row md:items-center">
                                 <SlideUp>
@@ -143,8 +147,7 @@ export default function Blog() {
                             </SlideUp>
                         </div>
                     </div>
-
-                    <div className="space-y-16 py-24">
+                    <div className="space-y-16 pt-24">
                         <div className="grid gap-8 md:grid-cols-2">
                             <div className="flex flex-col gap-4 md:flex-row md:items-center">
                                 <SlideUp>

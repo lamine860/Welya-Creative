@@ -6,6 +6,9 @@ use Inertia\Inertia;
 Route::get('/', fn() => inertia('welcome'))->name('home');
 Route::get('blog', fn() => inertia('blog'))->name('blog');
 Route::get('services', fn() => inertia('services'))->name('services');
+Route::get('projects', fn() => inertia('projects'))->name('projects');
+Route::get('about-us', fn() => inertia('about-us'))->name('abouts-us');
+Route::get('contact', fn() => inertia('contact'))->name('contact');
 
 
 Route::middleware(['auth', 'verified'])->group(function () {

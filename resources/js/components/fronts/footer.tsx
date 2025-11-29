@@ -1,8 +1,9 @@
 import AppLogo from '@/components/app-logo';
+import { Button } from '@/components/ui/button';
+import { blog, contact, home, projects, services } from '@/routes';
 import { Link } from '@inertiajs/react';
 import { FaFacebook, FaLinkedin } from 'react-icons/fa';
-import { FaXTwitter } from "react-icons/fa6";
-import { Button } from '@/components/ui/button';
+import { FaXTwitter } from 'react-icons/fa6';
 
 export default function Footer() {
     return (
@@ -10,7 +11,7 @@ export default function Footer() {
             <div className="mx-auto max-w-7xl px-4 md:px-0">
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-5">
                     <div className="flex flex-col gap-2 md:col-span-2">
-                        <Link href="" className="flex items-center">
+                        <Link href={home()} className="flex items-center">
                             <AppLogo />
                         </Link>
                         <p className="text-sm text-muted-foreground md:max-w-2/3">
@@ -21,18 +22,18 @@ export default function Footer() {
                     </div>
                     <ul className="flex flex-col gap-1 text-muted-foreground">
                         <li>
-                            <a href="">Portfolio</a>
+                            <Link href={projects()}>Portfolio</Link>
                         </li>
                         <li>
-                            <a href="">Services</a>
+                            <Link href={services()}>Services</Link>
                         </li>
                         <li>
-                            <a href="">Contact</a>
+                            <Link href={contact()}>Contact</Link>
                         </li>
                     </ul>
                     <ul className="flex flex-col gap-1 text-muted-foreground">
                         <li>
-                            <a href="">Blog</a>
+                            <Link href={blog()}>Blog</Link>
                         </li>
                         <li>
                             <a href="">Carièrre</a>
