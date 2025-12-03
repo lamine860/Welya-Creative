@@ -32,7 +32,7 @@ export default function Services() {
                                     </span>
                                 </SlideUp>
                                 <SlideUp>
-                                    <span className="text-2xl font-bold uppercase md:max-w-2/4">
+                                    <span className="text-3xl font-bold uppercase">
                                         Solutions de stratégie de marque
                                     </span>
                                 </SlideUp>
@@ -40,29 +40,30 @@ export default function Services() {
                             <div className="space-y-6">
                                 <SlideUp>
                                     <p className="text-lg text-muted-foreground md:text-xl">
-                                        We are passionate about our work and the
-                                        positive impact it has on our clients.
-                                        With over 12 years' experience, we have
-                                        consistently provided excellent web
-                                        solutions, offering our clients a
-                                        first-class experience.
+                                        Nous sommes passionnés par notre travail
+                                        et par l'impact positif qu'il a sur nos
+                                        clients. Forts de plus de 12 ans
+                                        d'expérience, nous avons toujours fourni
+                                        d'excellentes solutions web, offrant à
+                                        nos clients une expérience de premier
+                                        ordre.
                                     </p>
                                 </SlideUp>
                                 <div className="flex flex-col gap-6 md:flex-row md:gap-16">
                                     <SlideUp>
                                         <ul className="space-y-2 text-lg font-medium">
-                                            <li>+ Brand strategy</li>
-                                            <li>+ Video production</li>
-                                            <li>+ Research and testing</li>
-                                            <li>+ Usability consulting</li>
+                                            <li>+ Stratégie de marque</li>
+                                            <li>+ Production Video</li>
+                                            <li>+ Recherche et essais</li>
+                                            <li>+ Conseil en ergonomie</li>
                                         </ul>
                                     </SlideUp>
                                     <SlideUp>
                                         <ul className="space-y-2 text-lg font-medium">
-                                            <li>+ Brand strategy</li>
-                                            <li>+ Video production</li>
-                                            <li>+ Research and testing</li>
-                                            <li>+ Usability consulting</li>
+                                            <li>+ Direction artistique</li>
+                                            <li>+ Conception graphique</li>
+                                            <li>+ Création de contenu</li>
+                                            <li>+ Web development</li>
                                         </ul>
                                     </SlideUp>
                                 </div>
@@ -94,7 +95,7 @@ export default function Services() {
                                     </span>
                                 </SlideUp>
                                 <SlideUp>
-                                    <span className="text-2xl font-bold uppercase md:max-w-2/4">
+                                    <span className="text-3xl font-bold uppercase">
                                         Développement de sites web
                                     </span>
                                 </SlideUp>
@@ -102,29 +103,30 @@ export default function Services() {
                             <div className="space-y-6">
                                 <SlideUp>
                                     <p className="text-lg text-muted-foreground md:text-xl">
-                                        We are passionate about our work and the
-                                        positive impact it has on our clients.
-                                        With over 12 years' experience, we have
-                                        consistently provided excellent web
-                                        solutions, offering our clients a
-                                        first-class experience.
+                                        Nous sommes passionnés par notre travail
+                                        et par l'impact positif qu'il a sur nos
+                                        clients. Forts de plus de 12 ans
+                                        d'expérience, nous avons toujours fourni
+                                        d'excellentes solutions web, offrant à
+                                        nos clients une expérience de premier
+                                        ordre.
                                     </p>
                                 </SlideUp>
                                 <div className="flex flex-col gap-6 md:flex-row md:gap-16">
                                     <SlideUp>
                                         <ul className="space-y-2 text-lg font-medium">
-                                            <li>+ Brand strategy</li>
-                                            <li>+ Video production</li>
-                                            <li>+ Research and testing</li>
-                                            <li>+ Usability consulting</li>
+                                            <li>+ Développement d'API</li>
+                                            <li>+ Migration vers le cloud</li>
+                                            <li>+ Recherche et essais</li>
+                                            <li>+ Site web personnalisé</li>
                                         </ul>
                                     </SlideUp>
                                     <SlideUp>
                                         <ul className="space-y-2 text-lg font-medium">
-                                            <li>+ Brand strategy</li>
-                                            <li>+ Video production</li>
-                                            <li>+ Research and testing</li>
-                                            <li>+ Usability consulting</li>
+                                            <li>+ WordPress</li>
+                                            <li>+ Laravel</li>
+                                            <li>+ React</li>
+                                            <li>+ VueJS</li>
                                         </ul>
                                     </SlideUp>
                                 </div>
@@ -156,7 +158,7 @@ export default function Services() {
                                     </span>
                                 </SlideUp>
                                 <SlideUp>
-                                    <span className="text-2xl font-bold uppercase md:max-w-2/4">
+                                    <span className="text-3xl font-bold uppercase">
                                         Solutions de commerce électronique
                                     </span>
                                 </SlideUp>
@@ -164,29 +166,28 @@ export default function Services() {
                             <div className="space-y-6">
                                 <SlideUp>
                                     <p className="text-lg text-muted-foreground md:text-xl">
-                                        We are passionate about our work and the
-                                        positive impact it has on our clients.
-                                        With over 12 years' experience, we have
-                                        consistently provided excellent web
-                                        solutions, offering our clients a
-                                        first-class experience.
+                                        Nous sommes passionnés par notre travail
+                                        et par l'impact positif qu'il a sur nos
+                                        clients. Forts de plus de 12 ans
+                                        d'expérience, nous avons toujours fourni
+                                        d'excellentes solutions web, offrant à
+                                        nos clients une expérience de premier
+                                        ordre.
                                     </p>
                                 </SlideUp>
                                 <div className="flex flex-col gap-6 md:flex-row md:gap-16">
                                     <SlideUp>
                                         <ul className="space-y-2 text-lg font-medium">
-                                            <li>+ Brand strategy</li>
-                                            <li>+ Video production</li>
-                                            <li>+ Research and testing</li>
-                                            <li>+ Usability consulting</li>
+                                            <li>+ Shipping features</li>
+                                            <li>+ Payment gateways</li>
+                                            <li>+ Categorization</li>
                                         </ul>
                                     </SlideUp>
                                     <SlideUp>
                                         <ul className="space-y-2 text-lg font-medium">
-                                            <li>+ Brand strategy</li>
-                                            <li>+ Video production</li>
-                                            <li>+ Research and testing</li>
-                                            <li>+ Usability consulting</li>
+                                            <li>+ Solutions CMS</li>
+                                            <li>+ Plateforme Ecommerce</li>
+                                            <li>+ Apps development</li>
                                         </ul>
                                     </SlideUp>
                                 </div>
