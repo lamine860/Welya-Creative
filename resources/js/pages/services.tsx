@@ -69,19 +69,19 @@ export default function Services() {
                                 </div>
                             </div>
                         </div>
-                        <div className="grid gap-4 md:grid-cols-5">
+                        <div className="grid gap-y-4 md:grid-cols-5 md:gap-x-4">
                             <SlideUp className="md:col-span-3">
                                 <img
                                     src="/images/teams/branding.webp"
                                     alt="Branding"
-                                    className="w-full md:h-96"
+                                    className="h-96 w-full"
                                 />
                             </SlideUp>
                             <SlideUp className="col-span-2">
                                 <img
                                     src="/images/teams/branding-02.webp"
                                     alt="Branding"
-                                    className="w-full md:h-96"
+                                    className="h-96 w-full"
                                 />
                             </SlideUp>
                         </div>
