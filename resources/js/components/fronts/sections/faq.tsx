@@ -50,8 +50,8 @@ export default function Faq() {
     return (
         <section className="bg-slate-100 py-16 dark:bg-slate-950">
             <div className="mx-auto max-w-7xl px-4 md:px-0">
-                <div className="grid grid-cols-1 gap-8 md:grid-cols-5">
-                    <div className="space-y-4 md:col-span-3">
+                <div className="grid grid-cols-1 gap-8 md:grid-cols-12">
+                    <div className="space-y-4 md:col-span-8">
                         <SlideUp>
                             <h2 className="text-3xl font-bold uppercase md:text-5xl">
                                 Vos Reponses
@@ -79,7 +79,7 @@ export default function Faq() {
                             </Accordion>
                         </SlideUp>
                     </div>
-                    <div className="flex flex-col gap-6 md:col-span-2">
+                    <div className="flex flex-col gap-6 md:col-span-4">
                         <SlideUp>
                             <div className="flex flex-col space-y-6 rounded-xl bg-primary p-6 shadow-lg">
                                 <img

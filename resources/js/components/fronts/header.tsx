@@ -1,7 +1,7 @@
 import AppLogo from '@/components/app-logo';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { home } from '@/routes';
+import { aboutsUs, blog, home, projects, services } from '@/routes';
 import { Link } from '@inertiajs/react';
 import { useState } from 'react';
 import { HiDotsHorizontal } from 'react-icons/hi';
@@ -10,11 +10,11 @@ import { IoIosCall, IoIosCloseCircleOutline } from 'react-icons/io';
 export default function Header() {
     const [mobileMenuOpen, toggleMobileMenu] = useState(false);
     const navLinks = [
-        { name: 'Accueil', href: '/' },
-        { name: 'Services', href: '/services' },
-        { name: 'Portfolio', href: '#' },
-        { name: 'À propos', href: '#' },
-        { name: 'Blog', href: '#' },
+        { name: 'Accueil', href: home() },
+        { name: 'Services', href: services() },
+        { name: 'Portfolio', href: projects() },
+        { name: 'À propos', href: aboutsUs() },
+        { name: 'Blog', href: blog() },
     ];
     return (
         <header className="sticky z-40 flex items-center overflow-hidden bg-white px-6 py-6 md:top-0 md:mx-auto md:px-8 dark:bg-slate-800">
@@ -34,7 +34,9 @@ export default function Header() {
                             </Link>
                         ))}
                         <Button
-                            className={cn('rounded-full px-8 py-6 font-bold transition duration-200 hover:scale-95 hover:shadow')}
+                            className={cn(
+                                'rounded-full px-8 py-6 font-bold transition duration-200 hover:scale-95 hover:shadow',
+                            )}
                             asChild
                         >
                             <Link href="/contact">
@@ -48,7 +50,7 @@ export default function Header() {
                 </div>
                 <div
                     className={cn(
-                        'fixed top-0 left-0 z-50 min-h-screen w-full -translate-x-full bg-slate-50 dark:bg-slate-950 md:hidden',
+                        'fixed top-0 left-0 z-50 min-h-screen w-full -translate-x-full bg-slate-50 md:hidden dark:bg-slate-950',
                         {
                             'translate-x-0': mobileMenuOpen,
                             'transition-transform duration-300 ease-in-out': true,
@@ -76,7 +78,9 @@ export default function Header() {
                             </Link>
                         ))}
                         <Button
-                            className={cn('rounded-full px-8 py-6 font-bold text-lg')}
+                            className={cn(
+                                'rounded-full px-8 py-6 text-lg font-bold',
+                            )}
                             asChild
                         >
                             <Link href="/contact">

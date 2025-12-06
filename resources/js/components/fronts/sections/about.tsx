@@ -1,6 +1,7 @@
 import SlideUp from '@/components/animations/slide-up';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { aboutsUs, services } from '@/routes';
 import { Link } from '@inertiajs/react';
 import { FiEdit } from 'react-icons/fi';
 import { MdOutlineMedicalServices } from 'react-icons/md';
@@ -18,7 +19,10 @@ export default function About() {
                                 alt="Team"
                             />
                         </SlideUp>
-                        <SlideUp className="top-16 right-20 md:absolute" delay={.3}>
+                        <SlideUp
+                            className="top-16 right-20 md:absolute"
+                            delay={0.3}
+                        >
                             <img
                                 className="w-sm shadow transition duration-100 hover:shadow-lg md:w-76"
                                 src="/images/teams/lamine-bah.jpg"
@@ -50,7 +54,7 @@ export default function About() {
                                     className={cn('rounded-full px-10 py-6')}
                                     asChild
                                 >
-                                    <Link href="/about-us">
+                                    <Link href={aboutsUs()}>
                                         <span>
                                             <FiEdit />
                                         </span>
@@ -62,7 +66,7 @@ export default function About() {
                                     variant={'outline'}
                                     asChild
                                 >
-                                    <Link href="/services">
+                                    <Link href={services()}>
                                         <span>
                                             <MdOutlineMedicalServices />
                                         </span>
