@@ -26,12 +26,12 @@ export default function Hero() {
                     className="relative z-50 mx-auto flex w-full max-w-7xl flex-col px-4 md:px-0"
                 >
                     <SlideUp>
-                        <h1 className="hero-title">
+                        <h1 className="hero-title max-w-xl text-slate-50">
                             Élevez votre marque, transformez votre expérience
                         </h1>
                     </SlideUp>
                     <SlideUp delay={.3}>
-                        <p className="hero-subtitle">
+                        <p className="hero-subtitle text-slate-200 max-w-lg">
                             Agence de branding et de conception UI/UX de pointe
                             pour les entreprises qui veulent se démarquer.
                         </p>

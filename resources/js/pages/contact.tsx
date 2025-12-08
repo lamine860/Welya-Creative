@@ -1,10 +1,12 @@
 import SlideUp from '@/components/animations/slide-up';
 import { Input } from '@/components/input';
+import InputError from '@/components/input-error';
 import { RadioGroup, RadioGroupItem } from '@/components/radio-group';
 import { Textarea } from '@/components/textarea';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import FrontLayout from '@/layouts/front-layout';
+import { contact_store } from '@/routes';
 import { Form, Head } from '@inertiajs/react';
 import { GoPaperAirplane } from 'react-icons/go';
 
@@ -12,7 +14,7 @@ export default function Projects() {
     return (
         <FrontLayout>
             <Head title="Contact" />
-            <section className="min-h-screen pt-16">
+            <section className="min-h-screen py-16">
                 <div className="mx-auto max-w-7xl px-4 md:px-0">
                     <div className="grid space-y-10 md:grid-cols-3 md:gap-12">
                         <div className="flex flex-col gap-6">
@@ -59,141 +61,160 @@ export default function Projects() {
                             </SlideUp>
                             <SlideUp>
                                 <p className="text-lg font-medium text-muted-foreground">
-                                    All things design, we got you covered.
+                                    Tout ce qui touche au design, nous nous en
+                                    occupons.
                                 </p>
                             </SlideUp>
 
-                            <div className="mt-12">
+                            <SlideUp className="mt-12">
                                 <Form
-                                    action="contact"
-                                    method="post"
+                                    action={contact_store()}
                                     className="space-y-5"
                                 >
-                                    <div className="flex flex-col items-center gap-x-6 gap-y-5 sm:flex-row [&>*]:w-full">
-                                        <div className="flex flex-col gap-3">
-                                            <Label className="font-medium">
-                                                Nom
-                                            </Label>
-                                            <Input type="text" required />
-                                        </div>
-                                        <div className="flex flex-col gap-3">
-                                            <Label>E-mail</Label>
-                                            <Input type="email" required />
-                                        </div>
-                                    </div>
-                                    <div className="flex flex-col items-center gap-x-6 gap-y-5 sm:flex-row [&>*]:w-full">
-                                        <div className="flex flex-col gap-3">
-                                            <Label className="font-medium">
-                                                Numéro de téléphone
-                                            </Label>
-                                            <div className="relative mt-2">
-                                                <div className="absolute inset-y-0 left-3 my-auto flex h-6 items-center border-r pr-2">
-                                                    <select className="h-full rounded-lg bg-transparent text-sm outline-none">
-                                                        <option>US</option>
-                                                        <option>ES</option>
-                                                        <option>MR</option>
-                                                    </select>
+                                    {({ errors }) => (
+                                        <>
+                                            <div className="flex flex-col items-center gap-x-6 gap-y-5 sm:flex-row [&>*]:w-full">
+                                                <div className="flex flex-col gap-3">
+                                                    <Label className="font-medium">
+                                                        Nom
+                                                    </Label>
+                                                    <Input
+                                                        type="text"
+                                                        required
+                                                        name="name"
+                                                    />
+                                                    <InputError
+                                                        message={errors['name']}
+                                                    />
                                                 </div>
-                                                <input
-                                                    type="number"
-                                                    placeholder="+1 (555) 000-000"
+                                                <div className="flex flex-col gap-3">
+                                                    <Label>E-mail</Label>
+                                                    <Input
+                                                        type="email"
+                                                        required
+                                                        name="email"
+                                                    />
+                                                    <InputError
+                                                        message={
+                                                            errors['email']
+                                                        }
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div className="flex flex-col items-center gap-x-6 gap-y-5 sm:flex-row [&>*]:w-full">
+                                                <div className="flex flex-col gap-3">
+                                                    <Label className="font-medium">
+                                                        Numéro de téléphone
+                                                    </Label>
+                                                    <Input
+                                                        type="text"
+                                                        placeholder="+224 622 000 000"
+                                                        required
+                                                        name="phone_number"
+                                                    />
+                                                    <InputError
+                                                        message={
+                                                            errors[
+                                                                'phone_number'
+                                                            ]
+                                                        }
+                                                    />
+                                                </div>
+                                                <div className="flex flex-col gap-3">
+                                                    <Label className="font-medium">
+                                                        Entreprise
+                                                    </Label>
+                                                    <Input
+                                                        type="text"
+                                                        required
+                                                        name="company"
+                                                    />
+                                                    <InputError
+                                                        message={
+                                                            errors['company']
+                                                        }
+                                                    />
+                                                </div>
+                                            </div>
+                                            <RadioGroup className="py-3">
+                                                <p className="mb-1 font-medium">
+                                                    Je suis intéressé(e) par
+                                                </p>
+                                                <div className="flew-wrap flex items-center gap-3">
+                                                    <div className="flex items-center space-x-2">
+                                                        <RadioGroupItem
+                                                            value="ux_ui"
+                                                            id="ux_ui"
+                                                        />
+                                                        <Label htmlFor="ux_ui">
+                                                            UX UI DESIGN
+                                                        </Label>
+                                                    </div>
+                                                    <div className="flex items-center space-x-2">
+                                                        <RadioGroupItem
+                                                            value="web_design"
+                                                            id="web_design"
+                                                        />
+                                                        <Label htmlFor="web_design">
+                                                            Web Design
+                                                        </Label>
+                                                    </div>
+                                                    <div className="flex items-center space-x-2">
+                                                        <RadioGroupItem
+                                                            value="app_design"
+                                                            id="app_design"
+                                                        />
+                                                        <Label htmlFor="app_design">
+                                                            App Design
+                                                        </Label>
+                                                    </div>
+                                                    <div className="flex items-center space-x-2">
+                                                        <RadioGroupItem
+                                                            value="branding"
+                                                            id="branding"
+                                                        />
+                                                        <Label htmlFor="branding">
+                                                            Branding
+                                                        </Label>
+                                                    </div>
+                                                    <div className="flex items-center space-x-2">
+                                                        <RadioGroupItem
+                                                            value="other"
+                                                            id="other"
+                                                        />
+                                                        <Label htmlFor="other">
+                                                            Autre
+                                                        </Label>
+                                                    </div>
+                                                </div>
+                                                <InputError
+                                                    message={errors['interest']}
+                                                />
+                                            </RadioGroup>
+                                            <div className="flex flex-col gap-3">
+                                                <Label className="font-medium">
+                                                    Parlez-nous de votre projet
+                                                </Label>
+                                                <Textarea
                                                     required
-                                                    className="w-full appearance-none rounded-lg border bg-transparent py-2 pr-3 pl-[4.5rem] shadow-sm outline-none focus:border-indigo-600"
+                                                    className="h-36"
+                                                    name="message"
+                                                ></Textarea>
+                                                <InputError
+                                                    message={errors['message']}
                                                 />
                                             </div>
-                                        </div>
-                                        <div className="flex flex-col gap-3">
-                                            <Label className="font-medium">
-                                                Entreprise
-                                            </Label>
-                                            <Input type="text" required />
-                                        </div>
-                                    </div>
-                                    <RadioGroup
-                                        defaultValue="option-one"
-                                        className="py-3"
-                                    >
-                                        <p className="mb-1 font-medium text-muted-foreground">
-                                            Je suis intéressé(e) par
-                                        </p>
-                                        <div className="flew-wrap flex items-center gap-3">
-                                            <div className="flex items-center space-x-2">
-                                                <RadioGroupItem
-                                                    value="option-one"
-                                                    id="option-one"
-                                                />
-                                                <Label htmlFor="option-one">
-                                                    UX UI DESIGN
-                                                </Label>
-                                            </div>
-                                            <div className="flex items-center space-x-2">
-                                                <RadioGroupItem
-                                                    value="option-two"
-                                                    id="option-two"
-                                                />
-                                                <Label htmlFor="option-two">
-                                                    Web Design
-                                                </Label>
-                                            </div>
-                                            <div className="flex items-center space-x-2">
-                                                <RadioGroupItem
-                                                    value="option-two"
-                                                    id="option-two"
-                                                />
-                                                <Label htmlFor="option-two">
-                                                    App Design
-                                                </Label>
-                                            </div>
-                                            <div className="flex items-center space-x-2">
-                                                <RadioGroupItem
-                                                    value="option-two"
-                                                    id="option-two"
-                                                />
-                                                <Label htmlFor="option-two">
-                                                    Branding
-                                                </Label>
-                                            </div>
-                                            <div className="flex items-center space-x-2">
-                                                <RadioGroupItem
-                                                    value="option-two"
-                                                    id="option-two"
-                                                />
-                                                <Label htmlFor="option-two">
-                                                    Autre
-                                                </Label>
-                                            </div>
-                                            <div className="flex items-center space-x-2">
-                                                <RadioGroupItem
-                                                    value="option-two"
-                                                    id="option-two"
-                                                />
-                                                <Label htmlFor="option-two">
-                                                    Developpement
-                                                </Label>
-                                            </div>
-                                        </div>
-                                    </RadioGroup>
-                                    <div className="flex flex-col gap-3">
-                                        <Label className="font-medium">
-                                            Parlez-nous de votre projet
-                                        </Label>
-                                        <Textarea
-                                            required
-                                            className="h-36"
-                                        ></Textarea>
-                                    </div>
-                                    <Button className="">Soumettre</Button>
+                                            <Button className="text-lg">
+                                                Soumettre
+                                            </Button>
+                                        </>
+                                    )}
                                 </Form>
-                            </div>
+                            </SlideUp>
                         </div>
                     </div>
                 </div>
             </section>
-            {/* <section className="section bg-slate-100 py-16 dark:bg-slate-800">
-                <div className="mx-auto max-w-7xl px-4 md:px-0">
-
-                </div>
-            </section> */}
         </FrontLayout>
     );
 }
