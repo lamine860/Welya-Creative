@@ -140,7 +140,7 @@ export default function Projects() {
                                                 <p className="mb-1 font-medium">
                                                     Je suis intéressé(e) par
                                                 </p>
-                                                <div className="flew-wrap flex items-center gap-3">
+                                                <div className="grid grid-cols-3 gap-6">
                                                     <div className="flex items-center space-x-2">
                                                         <RadioGroupItem
                                                             value="ux_ui"
