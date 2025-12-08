@@ -5,7 +5,7 @@ import { Textarea } from '@/components/textarea';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import FrontLayout from '@/layouts/front-layout';
-import { Head } from '@inertiajs/react';
+import { Form, Head } from '@inertiajs/react';
 import { GoPaperAirplane } from 'react-icons/go';
 
 export default function Projects() {
@@ -64,8 +64,9 @@ export default function Projects() {
                             </SlideUp>
 
                             <div className="mt-12">
-                                <form
-                                    onSubmit={(e) => e.preventDefault()}
+                                <Form
+                                    action="contact"
+                                    method="post"
                                     className="space-y-5"
                                 >
                                     <div className="flex flex-col items-center gap-x-6 gap-y-5 sm:flex-row [&>*]:w-full">
@@ -182,7 +183,7 @@ export default function Projects() {
                                         ></Textarea>
                                     </div>
                                     <Button className="">Soumettre</Button>
-                                </form>
+                                </Form>
                             </div>
                         </div>
                     </div>

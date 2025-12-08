@@ -9,6 +9,7 @@ Route::get('services', fn() => inertia('services'))->name('services');
 Route::get('projects', fn() => inertia('projects'))->name('projects');
 Route::get('about-us', fn() => inertia('about-us'))->name('abouts-us');
 Route::get('contact', fn() => inertia('contact'))->name('contact');
+Route::post('contact', fn() => inertia('contact'))->name('contact_store');
 
 
 Route::middleware(['auth', 'verified'])->group(function () {
