@@ -1,16 +1,26 @@
 import SlideUp from '@/components/animations/slide-up';
+import { Checkbox } from '@/components/checkbox';
 import { Input } from '@/components/input';
 import InputError from '@/components/input-error';
-import { RadioGroup, RadioGroupItem } from '@/components/radio-group';
 import { Textarea } from '@/components/textarea';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import FrontLayout from '@/layouts/front-layout';
 import { contact_store } from '@/routes';
 import { Form, Head } from '@inertiajs/react';
+import { useEffect } from 'react';
 import { GoPaperAirplane } from 'react-icons/go';
+import { toast } from 'sonner';
 
-export default function Projects() {
+interface Props {
+    status: string | null;
+}
+export default function Projects({ status }: Props) {
+    useEffect(() => {
+        if (status) {
+            toast.success(status);
+        }
+    });
     return (
         <FrontLayout>
             <Head title="Contact" />
@@ -70,6 +80,7 @@ export default function Projects() {
                                 <Form
                                     action={contact_store()}
                                     className="space-y-5"
+                                    resetOnSuccess
                                 >
                                     {({ errors }) => (
                                         <>
@@ -136,61 +147,61 @@ export default function Projects() {
                                                     />
                                                 </div>
                                             </div>
-                                            <RadioGroup className="py-3">
-                                                <p className="mb-1 font-medium">
-                                                    Je suis intéressé(e) par
-                                                </p>
-                                                <div className="grid grid-cols-3 gap-6">
-                                                    <div className="flex items-center space-x-2">
-                                                        <RadioGroupItem
-                                                            value="ux_ui"
-                                                            id="ux_ui"
-                                                        />
-                                                        <Label htmlFor="ux_ui">
-                                                            UX UI DESIGN
-                                                        </Label>
-                                                    </div>
-                                                    <div className="flex items-center space-x-2">
-                                                        <RadioGroupItem
-                                                            value="web_design"
-                                                            id="web_design"
-                                                        />
-                                                        <Label htmlFor="web_design">
-                                                            Web Design
-                                                        </Label>
-                                                    </div>
-                                                    <div className="flex items-center space-x-2">
-                                                        <RadioGroupItem
-                                                            value="app_design"
-                                                            id="app_design"
-                                                        />
-                                                        <Label htmlFor="app_design">
-                                                            App Design
-                                                        </Label>
-                                                    </div>
-                                                    <div className="flex items-center space-x-2">
-                                                        <RadioGroupItem
-                                                            value="branding"
-                                                            id="branding"
-                                                        />
-                                                        <Label htmlFor="branding">
-                                                            Branding
-                                                        </Label>
-                                                    </div>
-                                                    <div className="flex items-center space-x-2">
-                                                        <RadioGroupItem
-                                                            value="other"
-                                                            id="other"
-                                                        />
-                                                        <Label htmlFor="other">
-                                                            Autre
-                                                        </Label>
-                                                    </div>
+                                            <p className="mb-1 font-medium">
+                                                Je suis intéressé(e) par
+                                            </p>
+                                            <div className="grid grid-cols-2 gap-3 py-2">
+                                                <div className="flex items-start gap-3">
+                                                    <Checkbox
+                                                        id="ux-ui-design"
+                                                        name="interest[]"
+                                                        value="ux ui design"
+                                                    />
+                                                    <Label htmlFor="ux-ui-design">
+                                                        UX UI Design
+                                                    </Label>
                                                 </div>
-                                                <InputError
-                                                    message={errors['interest']}
-                                                />
-                                            </RadioGroup>
+                                                <div className="flex items-start gap-3">
+                                                    <Checkbox
+                                                        id="web-design"
+                                                        name="interest[]"
+                                                        value="web design"
+                                                    />
+                                                    <Label htmlFor="web-design">
+                                                        Web Design
+                                                    </Label>
+                                                </div>
+                                                <div className="flex items-start gap-3">
+                                                    <Checkbox
+                                                        id="app-design"
+                                                        name="interest[]"
+                                                        value="app design"
+                                                    />
+                                                    <Label htmlFor="app-design">
+                                                        Web Design
+                                                    </Label>
+                                                </div>
+                                                <div className="flex items-start gap-3">
+                                                    <Checkbox
+                                                        id="branding"
+                                                        name="interest[]"
+                                                        value="branding"
+                                                    />
+                                                    <Label htmlFor="branding">
+                                                        Branding
+                                                    </Label>
+                                                </div>
+                                                <div className="flex items-start gap-3">
+                                                    <Checkbox
+                                                        id="marketing digital"
+                                                        name="interest[]"
+                                                        value="marketing digital"
+                                                    />
+                                                    <Label htmlFor="marketing digital">
+                                                        Marketing Digital
+                                                    </Label>
+                                                </div>
+                                            </div>
                                             <div className="flex flex-col gap-3">
                                                 <Label className="font-medium">
                                                     Parlez-nous de votre projet

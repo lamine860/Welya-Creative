@@ -3,21 +3,16 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Front\StoreContactRequest;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 
 class ContactStoreController extends Controller
 {
-    public function __invoke(Request $request)
+    public function __invoke(StoreContactRequest $request)
     {
-        $data = $request->validate([
-            'name' => 'required|string|min:2|max:255',
-            'email' => 'required|string|email',
-            'phone_number' => 'required|string|min:12|max:255',
-            'company' => 'required|string|min:2|max:255',
-            'message' => 'required|string|min:12',
-            'interest' => 'required|string'
-        ]);
-
+        Contact::create($request->validated());
+        return redirect()->back()->with('status', 'Message envoye avec succès1');
     }
 
 }
