@@ -30,10 +30,13 @@ export default function Hero() {
                             Élevez votre marque, transformez votre expérience
                         </h1>
                     </SlideUp>
-                    <SlideUp delay={.3}>
-                        <p className="hero-subtitle text-slate-200 max-w-lg">
-                            Agence de branding et de conception UI/UX de pointe
-                            pour les entreprises qui veulent se démarquer.
+                    <SlideUp delay={0.3}>
+                        <p className="hero-subtitle max-w-lg font-medium text-slate-300">
+                            {/* Agence de branding et de conception UI/UX de pointe
+                            pour les entreprises qui veulent se démarquer. */}
+                            Agence créative spécialisée en design digital,
+                            branding et développement web. Nous aidons les
+                            marques à se démarquer et à convertir.
                         </p>
                     </SlideUp>
                 </motion.div>

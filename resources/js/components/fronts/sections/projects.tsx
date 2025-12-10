@@ -58,7 +58,7 @@ export default function Projects() {
                 <div className="mx-auto flex max-w-7xl flex-col md:flex-row md:justify-between">
                     <SlideUp>
                         <h2 className="mb-6 px-4 text-3xl font-extrabold uppercase md:px-0 md:text-5xl">
-                            Travaux Récents
+                            Projets & concepts
                         </h2>
                     </SlideUp>
                     <SlideUp>

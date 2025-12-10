@@ -43,7 +43,7 @@ export default function Header() {
                                 <span>
                                     <IoIosCall />
                                 </span>
-                                Réserver un appel
+                                Demander un devis
                             </Link>
                         </Button>
                     </nav>
@@ -87,7 +87,7 @@ export default function Header() {
                                 <span>
                                     <IoIosCall />
                                 </span>
-                                Réserver un appel
+                                Demander un devis
                             </Link>
                         </Button>
                     </nav>

@@ -1,7 +1,7 @@
 import SlideUp from '@/components/animations/slide-up';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { aboutsUs, services } from '@/routes';
+import { projects, services } from '@/routes';
 import { Link } from '@inertiajs/react';
 import { FiEdit } from 'react-icons/fi';
 import { MdOutlineMedicalServices } from 'react-icons/md';
@@ -54,11 +54,11 @@ export default function About() {
                                     className={cn('rounded-full px-10 py-6')}
                                     asChild
                                 >
-                                    <Link href={aboutsUs()}>
+                                    <Link href={projects()}>
                                         <span>
                                             <FiEdit />
                                         </span>
-                                        Explorer les détails
+                                        Voir nos expertises
                                     </Link>
                                 </Button>
                                 <Button
