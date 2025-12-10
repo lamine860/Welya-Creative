@@ -12,7 +12,7 @@ class ContactStoreController extends Controller
     public function __invoke(StoreContactRequest $request)
     {
         Contact::create($request->validated());
-        return redirect()->back()->with('status', 'Message envoye avec succès1');
+        return redirect()->back()->with('status', 'Message envoye avec succès!');
     }
 
 }

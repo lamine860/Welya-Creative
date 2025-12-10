@@ -1,4 +1,5 @@
 import About from '@/components/fronts/sections/about';
+import Blog from '@/components/fronts/sections/blog';
 import Brand from '@/components/fronts/sections/brand';
 import Faq from '@/components/fronts/sections/faq';
 import Hero from '@/components/fronts/sections/hero';
@@ -19,8 +20,9 @@ export default function Welcome() {
             <Services />
             <Projects />
             <Hiring />
-            <Testimonials/>
-            <Faq/>
+            <Testimonials />
+            <Faq />
+            <Blog />
         </FrontLayout>
     );
 }
