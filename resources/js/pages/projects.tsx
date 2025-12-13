@@ -1,12 +1,13 @@
+import ProjectShowController from '@/actions/App/Http/Controllers/ProjectShowController';
 import SlideUp from '@/components/animations/slide-up';
 import FrontLayout from '@/layouts/front-layout';
-import { Head } from '@inertiajs/react';
+import { Head, Link } from '@inertiajs/react';
 
 export default function Projects() {
     return (
         <FrontLayout>
             <Head title="Realisations" />
-            <header className="min-h-[80vh] pt-16">
+            <div className="min-h-[80vh] pt-16">
                 <div className="mx-auto max-w-7xl px-4 md:px-0">
                     <SlideUp>
                         <h1 className="text-4xl leading-snug font-bold uppercase md:text-7xl">
@@ -20,11 +21,29 @@ export default function Projects() {
                             complexes en conceptions intuitives et évolutives.
                         </p>
                     </SlideUp>
+                    <div className="grid gap-8 py-8 md:grid-cols-2">
+                        <SlideUp>
+                            <Link
+                                href={ProjectShowController('nimba-food')}
+                                className="space-y-6"
+                            >
+                                <img
+                                    src="/images/projects/nimba-food-mockup-desktop-01.jpg"
+                                    alt="Nimba mobile mock up"
+                                />
+                                <div className="flex items-center gap-2">
+                                    <h3 className="text-xl font-bold uppercase">
+                                        Nimba Food
+                                    </h3>
+                                    <span className="text-sm text-muted-foreground uppercase">
+                                        - Projet conceptuel
+                                    </span>
+                                </div>
+                            </Link>
+                        </SlideUp>
+                    </div>
                 </div>
-            </header>
-            <section className="section bg-slate-100 py-16 dark:bg-slate-800">
-                <div className="mx-auto max-w-7xl px-4 md:px-0"></div>
-            </section>
+            </div>
         </FrontLayout>
     );
 }
