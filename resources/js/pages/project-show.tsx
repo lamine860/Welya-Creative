@@ -295,7 +295,7 @@ export default function ProjectShow() {
             </section>
             <section className="py-16">
                 <div className="mx-auto max-w-7xl px-4 md:px-0">
-                    <div className="grid gap-3 md:grid-cols-3">
+                    <div className="grid grid-cols-1 md:grid-cols-3">
                         <div className="col-span-2 space-y-4">
                             <SlideUp>
                                 <span className="paragraph">
@@ -319,42 +319,40 @@ export default function ProjectShow() {
                                 </p>
                             </SlideUp>
                         </div>
-                        <div className="flex flex-col gap-6">
-                            <SlideUp>
-                                <div className="flex flex-col space-y-6 rounded-xl bg-primary p-6 shadow-lg">
-                                    <img
-                                        src="/images/teams/contact-avatar.jpg"
-                                        className="size-24 rounded-full"
-                                        alt="Contact avatar"
-                                    />
-                                    <h3 className="text-3xl font-bold text-slate-50">
-                                        Réservez un rapide appel d'intro
-                                    </h3>
-                                    <Button
-                                        className="rounded-full py-6 font-bold"
-                                        variant={'outline'}
+                        <SlideUp>
+                            <div className="flex w-full flex-col space-y-6 rounded-xl bg-primary p-6 shadow-lg">
+                                <img
+                                    src="/images/teams/contact-avatar.jpg"
+                                    className="size-24 rounded-full"
+                                    alt="Contact avatar"
+                                />
+                                <h3 className="text-3xl font-bold text-slate-50">
+                                    Réservez un rapide appel d'intro
+                                </h3>
+                                <Button
+                                    className="rounded-full py-6 font-bold"
+                                    variant={'outline'}
+                                >
+                                    Résver un appel
+                                </Button>
+                                <div className="flex flex-col gap-1">
+                                    <a
+                                        href="mailto:contact@welyacrative.com"
+                                        className="flex items-center justify-between gap-x-1"
                                     >
-                                        Résver un appel
-                                    </Button>
-                                    <div className="flex flex-col gap-1">
-                                        <a
-                                            href="mailto:contact@welyacrative.com"
-                                            className="flex items-center justify-between gap-x-1"
-                                        >
-                                            <div>
-                                                <p className="text-sm text-slate-200">
-                                                    Vous préférez les e-mails ?
-                                                </p>
-                                                <span className="text-slate-200">
-                                                    hello@welyacreative.com
-                                                </span>
-                                            </div>
-                                            <GoPaperAirplane className="size-5 text-slate-200" />
-                                        </a>
-                                    </div>
+                                        <div>
+                                            <p className="text-sm text-slate-200">
+                                                Vous préférez les e-mails ?
+                                            </p>
+                                            <span className="text-slate-200">
+                                                hello@welyacreative.com
+                                            </span>
+                                        </div>
+                                        <GoPaperAirplane className="size-5 text-slate-200" />
+                                    </a>
                                 </div>
-                            </SlideUp>
-                        </div>
+                            </div>
+                        </SlideUp>
                     </div>
                 </div>
             </section>
