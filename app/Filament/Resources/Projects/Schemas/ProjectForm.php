@@ -7,6 +7,8 @@ use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Radio;
+use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Flex;
@@ -45,40 +47,64 @@ class ProjectForm
                         Textarea::make('description')
                             ->label('Description')
                             ->required(),
-                        Textarea::make('challenge')
+                        RichEditor::make('challenge')
                             ->label('Défi')
                             ->required(),
-                        Textarea::make('mission')
+                        RichEditor::make('mission')
                             ->label('Mission')
                             ->required(),
-                        Textarea::make('solutions')
+                        RichEditor::make('solutions')
                             ->label('Solutions')
                             ->required(),
-                        Textarea::make('result')
-                            ->label('Résultats')
+                        RichEditor::make('results')
+                            ->label('Résultat')
                             ->required(),
 
-                    ])->columnSpan(8),
-                Section::make('Données supplémentaires')
-                    ->schema([
-                        FileUpload::make('cover_image')
-                            ->label('Image de couverture')
-                            ->required()
-                            ->image(),
-                        DatePicker::make('year')
-                            ->label('Année')
-                            ->format('Y')
-                            ->required()
-                            ->native(false),
-                        Checkbox::make('is_featured')
-                            ->label('Mise en avant'),
-                        Radio::make('status')
-                            ->options([
-                                'draft' => 'Brouillon',
-                                'published' => 'Publier'
-                            ])
 
+                    ])->columnSpan(8),
+                Grid::make()
+                    ->schema([
+                        Section::make('Données supplémentaires')
+                            ->schema([
+                                FileUpload::make('cover_image')
+                                    ->label('Image de couverture')
+                                    ->required()
+                                    ->image()
+                                    ->imageResizeMode('cover')
+                                    ->imageCropAspectRatio('16:9')
+                                    ->imageResizeTargetWidth('1920')
+                                    ->imageResizeTargetHeight('1080'),
+                                DatePicker::make('year')
+                                    ->label('Année')
+                                    ->format('Y')
+                                    ->required()
+                                    ->native(false),
+                                Checkbox::make('is_featured')
+                                    ->label('Mise en avant'),
+                                Radio::make('status')
+                                    ->options([
+                                        'draft' => 'Brouillon',
+                                        'published' => 'Publier'
+                                    ]),
+
+                            ])->columnSpan(4),
+                        Section::make('Gallerie d\'image')
+                            ->schema([
+                                SpatieMediaLibraryFileUpload::make('gallery')
+                                    ->label('Gallerie')
+                                    ->collection('gallery')
+                                    ->image()
+                                    ->multiple()
+                                    ->reorderable()
+                                    ->imageResizeMode('cover')
+                                    ->imageCropAspectRatio('16:9')
+                                    ->imageResizeTargetWidth('1920')
+                                    ->imageResizeTargetHeight('1080')
+                                    ->columnSpanFull(),
+
+                            ])->columnSpan(4)
                     ])->columnSpan(4)
+
 
             ])->columns(12);
     }

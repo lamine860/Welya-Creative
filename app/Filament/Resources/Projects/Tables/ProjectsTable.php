@@ -16,25 +16,29 @@ class ProjectsTable
     {
         return $table
             ->columns([
+                ImageColumn::make('cover_image'),
                 TextColumn::make('title')
                     ->searchable(),
-                TextColumn::make('slug')
-                    ->searchable(),
                 TextColumn::make('customer')
+                    ->label('Client')
                     ->searchable(),
                 TextColumn::make('industry')
+                    ->label('Industrie')
                     ->searchable(),
-                TextColumn::make('year'),
-                ImageColumn::make('cover_image'),
+                TextColumn::make('year')
+                    ->label('Année'),
                 IconColumn::make('is_featured')
+                    ->label('Mise en avant')
                     ->boolean(),
                 TextColumn::make('status')
                     ->badge(),
                 TextColumn::make('created_at')
+                    ->label('Date de création')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('updated_at')
+                    ->label('Date de mise a jour')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),

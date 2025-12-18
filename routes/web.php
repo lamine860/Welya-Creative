@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Front\ContactStoreController;
+use App\Http\Controllers\ProjectIndexController;
 use App\Http\Controllers\ProjectShowController;
 use App\Http\Controllers\ServiceListController;
 use Illuminate\Support\Facades\Route;
@@ -8,7 +9,7 @@ use Inertia\Inertia;
 
 Route::get('/', fn() => inertia('welcome'))->name('home');
 Route::get('blog', fn() => inertia('blog'))->name('blog');
-Route::get('projects', fn() => inertia('projects'))->name('projects');
+Route::get('projects', ProjectIndexController::class)->name('projects');
 Route::get('projects/{slug}', ProjectShowController::class)->name('projects.show');
 Route::get('about-us', fn() => inertia('about-us'))->name('abouts-us');
 Route::get('contact', fn() => inertia('contact'))->name('contact');
