@@ -6,11 +6,8 @@ import { Head, Link, usePage } from '@inertiajs/react';
 
 export default function Index() {
     const { projects } = usePage<{
-        projects: {
-            data: Project[];
-        };
+        projects: Project[];
     }>().props;
-    console.log(projects);
     return (
         <FrontLayout>
             <Head title="Realisations" />
@@ -29,8 +26,8 @@ export default function Index() {
                         </p>
                     </SlideUp>
                     <div className="grid gap-8 py-8 md:grid-cols-2">
-                        {projects.data.map((project) => (
-                            <SlideUp>
+                        {projects.map((project) => (
+                            <SlideUp key={project.id}>
                                 <Link
                                     href={ProjectShowController(project.slug)}
                                     className="space-y-6"

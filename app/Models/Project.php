@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Enum\Status;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia;
@@ -37,7 +39,7 @@ class Project extends Model implements HasMedia
     public function getSlugOptions(): SlugOptions
     {
         return SlugOptions::create()
-            ->generateSlugsFrom('name')
+            ->generateSlugsFrom('title')
             ->saveSlugsTo('slug');
     }
 
@@ -46,5 +48,13 @@ class Project extends Model implements HasMedia
         $this->addMediaCollection('cover')->singleFile();
 
         $this->addMediaCollection('gallery');
+    }
+    public function scopePublished(Builder $query)
+    {
+        $query->where('status', Status::PUBLISHED->value);
+    }
+    public function scopeDraft(Builder $query)
+    {
+        $query->where('status', Status::DRAFT->value);
     }
 }

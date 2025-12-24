@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Data\ProjectData;
 use App\Http\Resources\ProjectResource;
 use App\Models\Project;
 use Illuminate\Http\Request;
@@ -13,10 +14,11 @@ class ProjectIndexController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $projects = Project::where('status', 'published')
-            ->get();
+        $projects = Project::published()
+            ->get()
+            ->map(fn(Project $project) => ProjectData::from($project));
         return inertia('projects/index', [
-            'projects' => ProjectResource::collection($projects),
+            'projects' => $projects,
         ]);
     }
 }
