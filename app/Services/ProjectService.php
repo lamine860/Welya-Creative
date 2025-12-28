@@ -13,4 +13,9 @@ class ProjectService
             ->get()
             ->map(fn($project) => ProjectData::fromModel($project)->include('gallery'));
     }
+    public function getDetailFor(Project $project)
+    {
+        return ProjectData::fromModel($project)
+            ->include('description', 'challenge', 'mission', 'results', 'solutions', 'gallery');
+    }
 }

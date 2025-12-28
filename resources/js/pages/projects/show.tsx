@@ -90,34 +90,15 @@ export default function ProjectShow({ project }: Props) {
                         </SlideUp>
                     </div>
                     <div className="grid gap-6 md:grid-cols-2">
-                        <SlideUp>
-                            <img
-                                src="/images/projects/nimba-food/nimba-food-packaging-mockup.jpg"
-                                alt="Nimba packaging mock up"
-                                className="mb-6 w-full max-w-5xl rounded-xl"
-                            />
-                        </SlideUp>
-                        <SlideUp>
-                            <img
-                                src="/images/projects/nimba-food/nimba-food-website-mockup.jpg"
-                                alt="Nimba packaging mock up"
-                                className="mb-6 w-full max-w-5xl rounded-xl"
-                            />
-                        </SlideUp>
-                        <SlideUp>
-                            <img
-                                src="/images/projects/nimba-food/nimba-food-promotional-banner.jpg"
-                                alt="Nimba packaging mock up"
-                                className="mb-6 w-full max-w-5xl rounded-xl"
-                            />
-                        </SlideUp>
-                        <SlideUp>
-                            <img
-                                src="/images/projects/nimba-food/nimba-food-mobile-mockup.jpg"
-                                alt="Nimba packaging mock up"
-                                className="mb-6 w-full max-w-5xl rounded-xl"
-                            />
-                        </SlideUp>
+                        {project.gallery.map((media) => (
+                            <SlideUp key={media.id}>
+                                <img
+                                    src={media.url}
+                                    alt={project.title}
+                                    className="mb-6 w-full max-w-5xl rounded-xl"
+                                />
+                            </SlideUp>
+                        ))}
                     </div>
                 </div>
             </section>

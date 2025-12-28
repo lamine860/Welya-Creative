@@ -35,6 +35,7 @@ export default function Index() {
                                     <img
                                         src="/images/projects/nimba-food-mockup-desktop-01.jpg"
                                         alt="Nimba mobile mock up"
+                                        className="rounded-sm"
                                     />
                                     <div className="flex items-center gap-2">
                                         <h3 className="text-xl font-bold uppercase">

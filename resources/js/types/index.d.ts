@@ -63,3 +63,13 @@ export interface Gallery {
     url: string;
     thumb: string;
 }
+
+export interface Testimony {
+    id: string;
+    name: string;
+    position: string;
+    company: string;
+    message: string;
+    avatar: string;
+    is_published: boolean;
+}
