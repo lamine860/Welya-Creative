@@ -24048,6 +24048,26 @@ namespace Illuminate\Database\Eloquent\Relations {
             }
     }
 
+namespace Illuminate\Database\Eloquent\Factories {
+    /**
+     * @template TModel of \Illuminate\Database\Eloquent\Model
+     * @method $this trashed()
+     */
+    class Factory {
+        /**
+         * @see \Spatie\Translatable\TranslatableServiceProvider::packageRegistered()
+         * @param array|string $locales
+         * @param mixed|null $value
+         * @static
+         */
+        public static function translations($locales, $value)
+        {
+            return \Illuminate\Database\Eloquent\Factories\Factory::translations($locales, $value);
+        }
+
+            }
+    }
+
 namespace Livewire\Features\SupportTesting {
     /**
      * @mixin \Illuminate\Testing\TestResponse
