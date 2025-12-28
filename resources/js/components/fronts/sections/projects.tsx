@@ -1,3 +1,4 @@
+import ProjectShowController from '@/actions/App/Http/Controllers/ProjectShowController';
 import SlideUp from '@/components/animations/slide-up';
 import {
     Carousel,
@@ -6,46 +7,26 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from '@/components/ui/carousel';
+import { Project } from '@/types';
+import { Link, usePage } from '@inertiajs/react';
 import Autoplay from 'embla-carousel-autoplay';
 
-export function Example() {
-    return (
-        <Carousel
-            plugins={[
-                Autoplay({
-                    delay: 2000,
-                }),
-            ]}
-        >
-            // ...
-        </Carousel>
-    );
-}
-
-const carouselItems = [
-    {
-        id: 1,
-        title: 'Project 1',
-        image: 'https://images.unsplash.com/photo-1759675795062-a657fcb278b1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1301',
-    },
-    {
-        id: 2,
-        title: 'Project 2',
-        image: 'https://images.unsplash.com/photo-1760991655905-ee03390b7fec?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687',
-    },
-    {
-        id: 3,
-        title: 'Project 3',
-        image: 'https://images.unsplash.com/photo-1760895986008-0a016173836c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687',
-    },
-    {
-        id: 4,
-        title: 'Project 4',
-        image: 'https://images.unsplash.com/photo-1747447597297-0716bbd5b049?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=764',
-    },
-];
-
 export default function Projects() {
+    const { projects } = usePage<{
+        projects: Project[];
+    }>().props;
+
+    const gallery = projects
+        .filter((project) => project.gallery.length > 0)
+        .flatMap((project) =>
+            project.gallery.map((gallery) => ({
+                ...gallery,
+                title: project.title,
+                projectId: project.id,
+                projectSlug: project.slug,
+            })),
+        );
+
     return (
         <section className="overflow-x-hidden bg-white py-16 dark:bg-slate-900">
             <Carousel
@@ -70,20 +51,29 @@ export default function Projects() {
                 </div>
                 <SlideUp>
                     <CarouselContent>
-                        {carouselItems.map((item, index) => (
-                            <CarouselItem key={index} className="md:basis-1/3">
-                                <img
-                                    src={item.image}
-                                    alt={item.title}
-                                    className="h-[520px] w-full rounded-sm object-cover"
-                                />
+                        {gallery.map((item) => (
+                            <CarouselItem
+                                key={item.id}
+                                className="md:basis-1/3"
+                            >
+                                <Link
+                                    href={ProjectShowController(
+                                        item.projectSlug,
+                                    )}
+                                >
+                                    <img
+                                        src={item.url}
+                                        alt={item.id}
+                                        className="h-[520px] w-full rounded-sm object-cover"
+                                    />
+                                </Link>
                                 <div className="p-4">
                                     <h3 className="text-xl font-bold">
                                         {item.title}
                                     </h3>
-                                    <p className="text-muted-foreground">
+                                    {/* <p className="text-muted-foreground">
                                         Description
-                                    </p>
+                                    </p> */}
                                 </div>
                             </CarouselItem>
                         ))}

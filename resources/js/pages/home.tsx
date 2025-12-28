@@ -13,7 +13,7 @@ import { Head } from '@inertiajs/react';
 export default function Welcome() {
     return (
         <FrontLayout>
-            <Head title="Welcome" />
+            <Head title="Accueil" />
             <Hero />
             <Brand />
             <About />

@@ -1,13 +1,13 @@
 <?php
 
-use App\Http\Controllers\Front\ContactStoreController;
-use App\Http\Controllers\ProjectIndexController;
-use App\Http\Controllers\ProjectShowController;
-use App\Http\Controllers\ServiceListController;
-use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProjectShowController;
+use App\Http\Controllers\ProjectIndexController;
+use App\Http\Controllers\Front\ContactStoreController;
 
-Route::get('/', fn() => inertia('welcome'))->name('home');
+Route::get('/', HomeController::class)->name('home');
 Route::get('blog', fn() => inertia('blog'))->name('blog');
 Route::get('projects', ProjectIndexController::class)->name('projects');
 Route::get('projects/{project:slug}', ProjectShowController::class)->name('projects.show');

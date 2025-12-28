@@ -55,5 +55,11 @@ export interface Project {
     results: boolean;
     created_at: string;
     updated_at: string;
+    gallery: Gallery[];
     [key: string]: unknown; // This allows for additional properties...
+}
+export interface Gallery {
+    id: numb;
+    url: string;
+    thumb: string;
 }
