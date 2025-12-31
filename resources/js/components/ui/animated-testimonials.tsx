@@ -17,7 +17,7 @@ export const AnimatedTestimonials = ({
 }: {
   testimonials: Testimonial[];
   autoplay?: boolean;
-}) => {
+  }) => {
   const [active, setActive] = useState(0);
 
   const handleNext = () => {
