@@ -1,6 +1,7 @@
 import AppLogo from '@/components/app-logo';
 import { Button } from '@/components/ui/button';
-import { blog, contact, home, projects, services } from '@/routes';
+import { contact, home, projects, services } from '@/routes';
+import blog from '@/routes/blog';
 import { Link } from '@inertiajs/react';
 import { FaFacebook, FaLinkedin } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
@@ -33,7 +34,7 @@ export default function Footer() {
                     </ul>
                     <ul className="flex flex-col gap-1 text-muted-foreground">
                         <li>
-                            <Link href={blog()}>Blog</Link>
+                            <Link href={blog.index()}>Blog</Link>
                         </li>
                         <li>
                             <a href="">Carièrre</a>

@@ -59,7 +59,7 @@ export interface Project {
     [key: string]: unknown; // This allows for additional properties...
 }
 export interface Gallery {
-    id: numb;
+    id: number;
     url: string;
     thumb: string;
 }
@@ -72,4 +72,31 @@ export interface Testimony {
     message: string;
     avatar: string;
     is_published: boolean;
+}
+
+export interface Post {
+    id: number;
+    slug: string;
+    title: string;
+    excerpt: string;
+    banner_url: string;
+    content: string;
+    url: string;
+    created_at;
+    updated_at;
+    author: {
+        id: number;
+        name: string;
+        email: string;
+    };
+    category: {
+        id: number;
+        name: string;
+        description: string;
+    };
+    tags: {
+        id: number;
+        name: { fr: string; en: string };
+        slug: { fr: string; en: string };
+    }[];
 }

@@ -2,12 +2,17 @@
 
 namespace App\Policies;
 
+use App\Enum\Role;
 use App\Models\Contact;
 use App\Models\User;
 use Illuminate\Auth\Access\Response;
 
 class ContactPolicy
 {
+    public function before(User $user)
+    {
+        return $user->role = Role::ADMIN;
+    }
     /**
      * Determine whether the user can view any models.
      */

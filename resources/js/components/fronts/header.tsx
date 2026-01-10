@@ -1,7 +1,8 @@
 import AppLogo from '@/components/app-logo';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { aboutsUs, blog, home, projects, services } from '@/routes';
+import { aboutsUs, home, projects, services } from '@/routes';
+import blog from '@/routes/blog';
 import { Link } from '@inertiajs/react';
 import { useState } from 'react';
 import { HiDotsHorizontal } from 'react-icons/hi';
@@ -14,7 +15,7 @@ export default function Header() {
         { name: 'Services', href: services() },
         { name: 'Portfolio', href: projects() },
         { name: 'À propos', href: aboutsUs() },
-        { name: 'Blog', href: blog() },
+        { name: 'Blog', href: blog.index() },
     ];
     return (
         <header className="sticky z-40 flex items-center overflow-hidden bg-white px-6 py-6 md:top-0 md:mx-auto md:px-8 dark:bg-slate-800">
