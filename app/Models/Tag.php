@@ -10,6 +10,6 @@ class Tag extends \Spatie\Tags\Tag
     use HasTags;
     public static function getLocale(): string
     {
-        return 'noi18n';
+        return 'fr';
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Data\PostData;
 use Illuminate\Http\Request;
 use Stephenjude\FilamentBlog\Models\Post;
 
@@ -12,6 +13,7 @@ class PostController extends Controller
         $posts = Post::published()
             ->with('author', 'category', 'tags')
             ->get();
+        $posts = PostData::collection($posts);
         return inertia('blog/index', [
             'posts' => $posts,
         ]);
@@ -19,6 +21,10 @@ class PostController extends Controller
 
     public function show(Post $post)
     {
-        return inertia('blog/show', []);
+        $post->load('tags', 'category', 'author');
+        $post = PostData::from($post);
+        return inertia('blog/show', [
+            'post' => $post,
+        ]);
     }
 }
