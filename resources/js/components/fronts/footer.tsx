@@ -12,10 +12,10 @@ export default function Footer() {
             <div className="mx-auto max-w-7xl px-4 md:px-0">
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-5">
                     <div className="flex flex-col gap-2 md:col-span-2">
-                        <Link href={home()} className="flex items-center">
+                        <Link href={home()} className="mb-3 flex items-center">
                             <AppLogo />
                         </Link>
-                        <p className="text-sm text-muted-foreground md:max-w-2/3">
+                        <p className="text-muted-foreground md:max-w-2/3">
                             Welya Creative est une agence digital qui fournit
                             des services de branding, d'UX/UI et de conception
                             de produits dans le monde entier.
