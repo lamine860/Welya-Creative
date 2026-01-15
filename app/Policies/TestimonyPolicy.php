@@ -8,9 +8,9 @@ use Illuminate\Auth\Access\Response;
 
 class TestimonyPolicy
 {
-    public function before()
+    public function before(User $user)
     {
-        return true;
+        return $user->isAdmin();
     }
     /**
      * Determine whether the user can view any models.

@@ -105,8 +105,19 @@ class User extends Authenticatable implements HasMedia, FilamentUser, HasAvatar
 
     public function canAccessPanel(Panel $panel): bool
     {
-        return \in_array($this->role, [Role::ADMIN, Role::EDITOR]);
+        return $this->canAccessDashboard();
+    }
+    public function canAccessDashboard()
+    {
+        return $this->isEditor();
     }
 
-
+    public function isAdmin()
+    {
+        return $this->role === ROle::ADMIN;
+    }
+    public function isEditor()
+    {
+        return $this->role === ROle::EDITOR || $this->role === Role::ADMIN;
+    }
 }

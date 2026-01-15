@@ -26,7 +26,7 @@ export default function Projects() {
                 projectSlug: project.slug,
             })),
         );
-
+    if (projects.length === 0) return null;
     return (
         <section className="overflow-x-hidden bg-white py-16 dark:bg-slate-900">
             <Carousel
@@ -63,7 +63,7 @@ export default function Projects() {
                                 >
                                     <img
                                         src={item.url}
-                                        alt={item.id}
+                                        alt={item.title}
                                         className="h-[520px] w-full rounded-sm object-cover"
                                     />
                                 </Link>

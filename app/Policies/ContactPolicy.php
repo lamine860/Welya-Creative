@@ -11,7 +11,7 @@ class ContactPolicy
 {
     public function before(User $user)
     {
-        return $user->role = Role::ADMIN;
+        return $user->isAdmin();
     }
     /**
      * Determine whether the user can view any models.

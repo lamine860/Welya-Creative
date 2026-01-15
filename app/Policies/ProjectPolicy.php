@@ -2,22 +2,23 @@
 
 namespace App\Policies;
 
+use App\Enum\Role;
 use App\Models\Project;
 use App\Models\User;
 use Illuminate\Auth\Access\Response;
 
 class ProjectPolicy
 {
-    public function before()
+    public function before(User $user)
     {
-        return true;
+        return $user->isAdmin();
     }
     /**
      * Determine whether the user can view any models.
      */
     public function viewAny(User $user): bool
     {
-        return true;
+        return $user->isAdmin();
     }
 
     /**
@@ -25,7 +26,7 @@ class ProjectPolicy
      */
     public function view(User $user, Project $project): bool
     {
-        return false;
+        return $user->isAdmin();
     }
 
     /**
@@ -33,7 +34,7 @@ class ProjectPolicy
      */
     public function create(User $user): bool
     {
-        return false;
+        return $user->isAdmin();
     }
 
     /**
@@ -41,7 +42,7 @@ class ProjectPolicy
      */
     public function update(User $user, Project $project): bool
     {
-        return false;
+        return $user->isAdmin();
     }
 
     /**
@@ -49,7 +50,7 @@ class ProjectPolicy
      */
     public function delete(User $user, Project $project): bool
     {
-        return false;
+        return $user->isAdmin();
     }
 
     /**
@@ -57,7 +58,7 @@ class ProjectPolicy
      */
     public function restore(User $user, Project $project): bool
     {
-        return false;
+        return $user->isAdmin();
     }
 
     /**
@@ -65,6 +66,6 @@ class ProjectPolicy
      */
     public function forceDelete(User $user, Project $project): bool
     {
-        return false;
+        return $user->isAdmin();
     }
 }
