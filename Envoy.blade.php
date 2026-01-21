@@ -8,7 +8,7 @@ $dotenv->required(['DEPLOY_SERVER', 'DEPLOY_REPOSITORY', 'DEPLOY_PATH'])->notEmp
 echo $e->getMessage();
 exit;
 }
-$down = true;
+$down = false;
 $php = $_ENV['DEPLOY_PHP_CMD'] ?? 'php';
 $npm = $_ENV['DEPLOY_NPM_CMD'] ?? '$HOME/.volta/bin/npm';
 $composer = $_ENV['DEPLOY_COMPOSER_CMD'] ?? 'composer';
