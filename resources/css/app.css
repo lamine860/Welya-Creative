@@ -3,7 +3,7 @@
 @source '../views';
 @plugin "@tailwindcss/typography";
 
-/* @custom-variant dark (&:is(.dark *)); */
+@custom-variant dark (&:is(.dark *));
 
 /* --font-sans:
     'Inter', ui-sans-serif, system-ui, sans-serif,
