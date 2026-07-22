@@ -15,7 +15,7 @@ export default ({ children, breadcrumbs, ...props }: FrontLayoutProps) => (
         <Head title="Welcome">
             <link rel="preconnect" href="https://fonts.bunny.net" />
             <link
-                href="https://fonts.bunny.net/css?family=inter:400,500,600"
+                href="https://fonts.bunny.net/css?family=inter:400,500,600,700|space-grotesk:500,600,700"
                 rel="stylesheet"
             />
         </Head>
