@@ -1,7 +1,9 @@
 import SlideUp from '@/components/animations/slide-up';
+import PageHeader from '@/components/fronts/page-header';
 import { Button } from '@/components/ui/button';
 import FrontLayout from '@/layouts/front-layout';
 import { Project } from '@/types';
+import { Head } from '@inertiajs/react';
 import { GoPaperAirplane } from 'react-icons/go';
 
 type Props = {
@@ -10,36 +12,19 @@ type Props = {
 export default function ProjectShow({ project }: Props) {
     return (
         <FrontLayout>
-            <section className="min-h-[80vh] py-16">
+            <Head title={project.title} />
+            <PageHeader
+                eyebrow="Étude de cas"
+                title={project.title}
+                description={project.description}
+            />
+            <section className="pb-16">
                 <div className="mx-auto max-w-7xl px-4 md:px-0">
-                    {/* <SlideUp>
-                        <div className="mb-6 flex flex-wrap items-center gap-4">
-                            <span className="inline-block rounded-full border px-3 py-2 text-sm uppercase">
-                                Branding
-                            </span>
-                            <span className="inline-block rounded-full border px-3 py-2 text-sm uppercase">
-                                Design graphique
-                            </span>
-                            <span className="inline-block rounded-full border px-3 py-2 text-sm uppercase">
-                                Site vitrine
-                            </span>
-                        </div>
-                    </SlideUp> */}
-                    <SlideUp>
-                        <h1 className="mb-6 text-3xl font-bold uppercase md:text-5xl">
-                            {project.title}
-                        </h1>
-                    </SlideUp>
-                    <SlideUp>
-                        <p className="mb-6 max-w-5xl text-xl text-muted-foreground">
-                            {project.description}
-                        </p>
-                    </SlideUp>
                     <SlideUp>
                         <img
                             src="/images/projects/nimba-food-mockup-desktop-01.jpg"
                             alt="Nimba mobile mock up"
-                            className="mb-6 w-full max-w-5xl rounded-xl"
+                            className="mb-6 w-full max-w-5xl rounded-2xl ring-1 ring-black/5"
                         />
                     </SlideUp>
                     <SlideUp>
@@ -95,7 +80,7 @@ export default function ProjectShow({ project }: Props) {
                                 <img
                                     src={media.url}
                                     alt={project.title}
-                                    className="mb-6 w-full max-w-5xl rounded-xl"
+                                    className="mb-6 w-full max-w-5xl rounded-2xl ring-1 ring-black/5"
                                 />
                             </SlideUp>
                         ))}
@@ -129,20 +114,20 @@ export default function ProjectShow({ project }: Props) {
                             </SlideUp>
                         </div>
                         <SlideUp>
-                            <div className="flex w-full flex-col space-y-6 rounded-xl bg-primary p-6 shadow-lg">
+                            <div className="flex w-full flex-col space-y-6 rounded-2xl bg-gradient-to-br from-primary to-indigo-600 p-8 shadow-xl shadow-primary/25">
                                 <img
                                     src="/images/teams/contact-avatar.jpg"
-                                    className="size-24 rounded-full"
+                                    className="size-20 rounded-full ring-4 ring-white/30"
                                     alt="Contact avatar"
                                 />
-                                <h3 className="text-3xl font-bold text-slate-50">
+                                <h3 className="font-heading text-2xl font-bold text-slate-50">
                                     Réservez un rapide appel d'intro
                                 </h3>
                                 <Button
-                                    className="rounded-full py-6 font-bold"
+                                    className="rounded-full bg-white py-6 font-bold text-primary hover:bg-white/90"
                                     variant={'outline'}
                                 >
-                                    Résver un appel
+                                    Réserver un appel
                                 </Button>
                                 <div className="flex flex-col gap-1">
                                     <a

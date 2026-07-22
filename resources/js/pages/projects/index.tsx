@@ -1,8 +1,10 @@
 import ProjectShowController from '@/actions/App/Http/Controllers/ProjectShowController';
 import SlideUp from '@/components/animations/slide-up';
+import PageHeader from '@/components/fronts/page-header';
 import FrontLayout from '@/layouts/front-layout';
 import { Project } from '@/types';
 import { Head, Link, usePage } from '@inertiajs/react';
+import { FiArrowUpRight } from 'react-icons/fi';
 
 export default function Index() {
     const { projects } = usePage<{
@@ -11,38 +13,39 @@ export default function Index() {
     return (
         <FrontLayout>
             <Head title="Realisations" />
-            <div className="min-h-[80vh] pt-16">
+            <PageHeader
+                eyebrow="Portfolio"
+                title="Réalisations"
+                description="Découvrez comment nous avons aidé des startups et des marques mondiales à transformer des idées complexes en conceptions intuitives et évolutives."
+            />
+            <section className="pb-24">
                 <div className="mx-auto max-w-7xl px-4 md:px-0">
-                    <SlideUp>
-                        <h1 className="text-4xl leading-snug font-bold uppercase md:text-7xl">
-                            Realisations
-                        </h1>
-                    </SlideUp>
-                    <SlideUp className="md:max-w-3xl">
-                        <p className="text-xl font-medium text-muted-foreground md:text-2xl">
-                            Découvrez comment nous avons aidé des startups et
-                            des marques mondiales à transformer des idées
-                            complexes en conceptions intuitives et évolutives.
-                        </p>
-                    </SlideUp>
-                    <div className="grid gap-8 py-8 md:grid-cols-2">
+                    <div className="grid gap-8 md:grid-cols-2">
                         {projects.map((project) => (
                             <SlideUp key={project.id}>
                                 <Link
                                     href={ProjectShowController(project.slug)}
-                                    className="space-y-6"
+                                    className="group block"
                                 >
-                                    <img
-                                        src="/images/projects/nimba-food-mockup-desktop-01.jpg"
-                                        alt="Nimba mobile mock up"
-                                        className="rounded-sm"
-                                    />
-                                    <div className="flex items-center gap-2">
-                                        <h3 className="text-xl font-bold uppercase">
-                                            {project.title}
-                                        </h3>
-                                        <span className="text-sm text-muted-foreground uppercase">
-                                            - {project.industry}
+                                    <div className="relative overflow-hidden rounded-2xl ring-1 ring-black/5">
+                                        <img
+                                            src="/images/projects/nimba-food-mockup-desktop-01.jpg"
+                                            alt={project.title}
+                                            className="w-full transition-transform duration-500 group-hover:scale-105"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                                    </div>
+                                    <div className="mt-5 flex items-center justify-between">
+                                        <div className="flex flex-wrap items-center gap-2">
+                                            <h3 className="text-xl font-bold uppercase">
+                                                {project.title}
+                                            </h3>
+                                            <span className="text-sm text-muted-foreground uppercase">
+                                                - {project.industry}
+                                            </span>
+                                        </div>
+                                        <span className="flex size-10 items-center justify-center rounded-full bg-primary/10 text-primary transition-all duration-200 group-hover:bg-primary group-hover:text-primary-foreground">
+                                            <FiArrowUpRight />
                                         </span>
                                     </div>
                                 </Link>
@@ -50,7 +53,7 @@ export default function Index() {
                         ))}
                     </div>
                 </div>
-            </div>
+            </section>
         </FrontLayout>
     );
 }

@@ -1,4 +1,5 @@
-import { Card } from '@/components/ui/card';
+import SlideUp from '@/components/animations/slide-up';
+import PageHeader from '@/components/fronts/page-header';
 import FrontLayout from '@/layouts/front-layout';
 import { formatDate } from '@/lib/utils';
 import { Post } from '@/types';
@@ -13,87 +14,60 @@ export default function BlogIndex({ posts }: Props) {
     return (
         <FrontLayout>
             <Head title="Blog" />
-            <div className="mx-auto max-w-7xl px-4 md:px-0">
-                <section className="space-y-16 py-16">
-                    <div className="text-center">
-                        <h2 className="mx-auto mb-4 text-3xl font-semibold text-pretty md:text-4xl lg:max-w-3xl">
-                            News
-                        </h2>
-                        <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
-                            Conseils, stratégies et inspirations digitales.
-                            Découvrez nos articles sur le web design, le
-                            développement et le branding pour aider les
-                            entreprises à construire une présence en ligne
-                            performante et durable.
-                        </p>
-                    </div>
-
-                    <div className="grid gap-y-10 sm:grid-cols-12 sm:gap-y-12 md:gap-y-16 lg:gap-y-20">
+            <PageHeader
+                eyebrow="Blog"
+                title="News"
+                description="Conseils, stratégies et inspirations digitales. Découvrez nos articles sur le web design, le développement et le branding pour aider les entreprises à construire une présence en ligne performante et durable."
+            />
+            <section className="pb-24">
+                <div className="mx-auto max-w-7xl px-4 md:px-0">
+                    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
                         {posts.map((post) => (
-                            <Card
-                                key={post.id}
-                                className="order-last border-0 bg-transparent shadow-none sm:order-first sm:col-span-12 lg:col-span-10 lg:col-start-2"
-                            >
-                                <div className="grid gap-y-6 sm:grid-cols-10 sm:gap-x-5 sm:gap-y-0 md:items-center md:gap-x-8 lg:gap-x-12">
-                                    <div className="sm:col-span-5">
-                                        <div className="mb-4 md:mb-6">
-                                            <div className="flex flex-wrap gap-3 text-xs tracking-wider text-muted-foreground uppercase md:gap-5 lg:gap-6">
-                                                {post.tags.map((tag) => (
-                                                    <span key={tag.id}>
-                                                        {tag.name.fr}
-                                                    </span>
-                                                ))}
-                                            </div>
+                            <SlideUp key={post.id}>
+                                <a
+                                    href={post.url}
+                                    className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border/60 bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                                >
+                                    <div className="aspect-[16/9] overflow-hidden">
+                                        <img
+                                            src={post.banner_url}
+                                            alt={post.title}
+                                            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                        />
+                                    </div>
+                                    <div className="flex flex-1 flex-col p-6">
+                                        <div className="mb-3 flex flex-wrap gap-2">
+                                            {post.tags.map((tag) => (
+                                                <span
+                                                    key={tag.id}
+                                                    className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold tracking-wide text-primary uppercase"
+                                                >
+                                                    {tag.name.fr}
+                                                </span>
+                                            ))}
                                         </div>
-                                        <h3 className="text-xl font-semibold md:text-2xl lg:text-3xl">
-                                            <a
-                                                href={post.url}
-                                                className="hover:underline"
-                                            >
-                                                {post.title}
-                                            </a>
+                                        <h3 className="text-lg font-semibold transition-colors group-hover:text-primary md:text-xl">
+                                            {post.title}
                                         </h3>
-                                        <p className="mt-4 text-lg text-muted-foreground md:mt-5">
+                                        <p className="mt-3 line-clamp-3 flex-1 text-muted-foreground">
                                             {post.excerpt}
                                         </p>
-                                        <div className="mt-6 flex items-center space-x-4 text-sm md:mt-8">
+                                        <div className="mt-6 flex items-center justify-between border-t border-border/60 pt-4 text-sm">
                                             <span className="text-muted-foreground">
-                                                {post.author?.name}
-                                            </span>
-                                            <span className="text-muted-foreground">
-                                                •
-                                            </span>
-                                            <span className="text-muted-foreground">
+                                                {post.author?.name} ·{' '}
                                                 {formatDate(post.created_at)}
                                             </span>
-                                        </div>
-                                        <div className="mt-6 flex items-center space-x-2 md:mt-8">
-                                            <a
-                                                href={post.url}
-                                                className="inline-flex items-center font-semibold hover:underline md:text-base"
-                                            >
-                                                <span>Lire l’article</span>
-                                                <ArrowRight className="ml-2 size-4 transition-transform" />
-                                            </a>
+                                            <span className="inline-flex items-center font-semibold text-primary">
+                                                <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+                                            </span>
                                         </div>
                                     </div>
-                                    <div className="order-first sm:order-last sm:col-span-5">
-                                        <a href="" className="block">
-                                            <div className="aspect-[16/9] overflow-clip rounded-lg border border-border">
-                                                <img
-                                                    src={post.banner_url}
-                                                    alt={post.title}
-                                                    className="h-full w-full object-cover transition-opacity duration-200 fade-in hover:opacity-70"
-                                                />
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </Card>
+                                </a>
+                            </SlideUp>
                         ))}
                     </div>
-                </section>
-            </div>
+                </div>
+            </section>
         </FrontLayout>
     );
 }

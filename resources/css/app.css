@@ -282,6 +282,8 @@
     }
     .title-3 {
         @apply mb-3 text-2xl font-bold uppercase;
+        font-family: var(--font-heading);
+        letter-spacing: -0.01em;
     }
     .section-list {
         @apply mb-6 space-y-2 text-lg text-muted-foreground md:text-xl;

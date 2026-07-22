@@ -1,4 +1,5 @@
 import SlideUp from '@/components/animations/slide-up';
+import PageHeader from '@/components/fronts/page-header';
 import { Button } from '@/components/ui/button';
 import FrontLayout from '@/layouts/front-layout';
 import { contact } from '@/routes';
@@ -8,26 +9,24 @@ export default function About() {
     return (
         <FrontLayout>
             <Head title="Aprops de nous" />
-            <section className="min-h-screen py-16">
+            <PageHeader
+                eyebrow="À propos"
+                title="Un design qui fait avancer les marques"
+            />
+            <section className="pb-16">
                 <div className="mx-auto max-w-7xl px-4 md:px-0">
-                    <SlideUp className="md:max-w-5xl">
-                        <h1 className="text-4xl leading-snug font-bold uppercase md:text-7xl">
-                            Un design qui fait avancer les marques
-                        </h1>
-                    </SlideUp>
-                    <SlideUp className="md:max-w-3xl">
-                        <p className="text-lg font-medium text-muted-foreground md:text-xl"></p>
-                    </SlideUp>
                     <SlideUp>
-                        <img
-                            className="mt-12 h-8/12 w-full rounded-xl shadow"
-                            src="/images/about-header.jpg"
-                            alt="Apropos de Welya Creative image de l'equipe groupe"
-                        />
+                        <div className="overflow-hidden rounded-2xl shadow-lg ring-1 ring-black/5">
+                            <img
+                                className="w-full"
+                                src="/images/about-header.jpg"
+                                alt="Apropos de Welya Creative image de l'equipe groupe"
+                            />
+                        </div>
                     </SlideUp>
                     <div className="pt-20 md:mx-auto md:max-w-5xl">
                         <SlideUp>
-                            <h2 className="mb-5 text-2xl font-bold uppercase md:text-3xl">
+                            <h2 className="mb-5 border-l-4 border-primary pl-4 font-heading text-2xl font-bold uppercase md:text-3xl">
                                 Apropos de Welya Creative
                             </h2>
                         </SlideUp>
@@ -91,7 +90,7 @@ export default function About() {
                     </div>
                     <div className="pt-20 md:mx-auto md:max-w-5xl">
                         <SlideUp>
-                            <h2 className="mb-5 text-2xl font-bold uppercase md:text-3xl">
+                            <h2 className="mb-5 border-l-4 border-primary pl-4 font-heading text-2xl font-bold uppercase md:text-3xl">
                                 Qui sommes-nous ?
                             </h2>
                         </SlideUp>
@@ -114,7 +113,7 @@ export default function About() {
                     </div>
                     <div className="pt-20 md:mx-auto md:max-w-5xl">
                         <SlideUp>
-                            <h2 className="mb-5 text-2xl font-bold uppercase md:text-3xl">
+                            <h2 className="mb-5 border-l-4 border-primary pl-4 font-heading text-2xl font-bold uppercase md:text-3xl">
                                 Pourquoi nous choisir ?
                             </h2>
                         </SlideUp>
@@ -161,7 +160,7 @@ export default function About() {
                     </div>
                     <div className="pt-20 md:mx-auto md:max-w-5xl">
                         <SlideUp>
-                            <h2 className="mb-5 text-2xl font-bold uppercase md:text-3xl">
+                            <h2 className="mb-5 border-l-4 border-primary pl-4 font-heading text-2xl font-bold uppercase md:text-3xl">
                                 Notre Vision
                             </h2>
                         </SlideUp>
@@ -181,6 +180,7 @@ export default function About() {
                                 <Button
                                     variant={'link'}
                                     className="mx-auto text-2xl"
+                                    asChild
                                 >
                                     <Link href={contact()}>
                                         Rejoignez-nous dans l'aventure !
