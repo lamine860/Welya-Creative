@@ -1,16 +1,14 @@
 import Footer from '@/components/fronts/footer';
 import Header from '@/components/fronts/header';
 import { Toaster } from '@/components/sonner';
-import { type BreadcrumbItem } from '@/types';
 import { Head } from '@inertiajs/react';
 import { type ReactNode } from 'react';
 
 interface FrontLayoutProps {
     children: ReactNode;
-    breadcrumbs?: BreadcrumbItem[];
 }
 
-export default ({ children, breadcrumbs, ...props }: FrontLayoutProps) => (
+export default ({ children, ...props }: FrontLayoutProps) => (
     <>
         <Head title="Welcome">
             <link rel="preconnect" href="https://fonts.bunny.net" />
