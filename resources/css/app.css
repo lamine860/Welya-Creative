@@ -255,6 +255,9 @@
 @layer components {
     .hero-title {
         @apply text-5xl font-extrabold uppercase md:text-7xl;
+        font-family: var(--font-heading);
+        letter-spacing: -0.02em;
+        line-height: 1.05;
     }
 
     .hero-subtitle {
@@ -267,6 +270,8 @@
 
     .heading-2 {
         @apply text-xl font-bold uppercase md:text-2xl;
+        font-family: var(--font-heading);
+        letter-spacing: -0.01em;
     }
 
     .text-gradient {
