@@ -1,4 +1,5 @@
 import SlideUp from '@/components/animations/slide-up';
+import SectionHeading from '@/components/fronts/section-heading';
 import {
     Accordion,
     AccordionContent,
@@ -27,19 +28,14 @@ const services = [
 
 export default function Services() {
     return (
-        <section className="mx-auto max-w-7xl px-4 py-20 md:px-0">
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-                <div className="mb-10 space-y-6 md:mb-0">
-                    <SlideUp>
-                        <h2 className="text-3xl font-bold uppercase md:text-5xl">
-                            Nous proposons
-                        </h2>
-                    </SlideUp>
-                    <SlideUp>
-                        <p className="subtitle">
-                            Tout ce qui touche au design, nous nous en occupons.
-                        </p>
-                    </SlideUp>
+        <section className="mx-auto max-w-7xl px-4 py-20 md:px-0 md:py-28">
+            <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-16">
+                <div className="md:sticky md:top-28 md:self-start">
+                    <SectionHeading
+                        eyebrow="Nos expertises"
+                        title="Nous proposons"
+                        description="Tout ce qui touche au design, nous nous en occupons."
+                    />
                 </div>
                 <SlideUp>
                     <Accordion
@@ -52,11 +48,17 @@ export default function Services() {
                             <AccordionItem
                                 value={`item-${index + 1}`}
                                 key={index}
+                                className="border-b border-border/60"
                             >
-                                <AccordionTrigger className="text-xl font-bold">
-                                    {service.title}
+                                <AccordionTrigger className="py-6 text-xl font-bold hover:no-underline [&[data-state=open]]:text-primary">
+                                    <span className="flex items-center gap-4">
+                                        <span className="font-heading text-sm font-semibold text-primary/60">
+                                            0{index + 1}
+                                        </span>
+                                        {service.title}
+                                    </span>
                                 </AccordionTrigger>
-                                <AccordionContent className="text-lg text-muted-foreground">
+                                <AccordionContent className="pl-10 text-lg text-muted-foreground">
                                     {service.content}
                                 </AccordionContent>
                             </AccordionItem>
