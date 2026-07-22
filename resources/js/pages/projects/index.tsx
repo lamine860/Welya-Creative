@@ -20,6 +20,23 @@ export default function Index() {
             />
             <section className="pb-24">
                 <div className="mx-auto max-w-7xl px-4 md:px-0">
+                    {projects.length === 0 && (
+                        <SlideUp>
+                            <div className="flex flex-col items-center gap-4 rounded-2xl border border-dashed border-border/60 bg-slate-50 py-20 text-center dark:bg-slate-900">
+                                <span className="flex size-14 items-center justify-center rounded-full bg-primary/10 text-primary">
+                                    <FiArrowUpRight className="size-6" />
+                                </span>
+                                <h3 className="font-heading text-xl font-bold uppercase">
+                                    Nos réalisations arrivent bientôt
+                                </h3>
+                                <p className="max-w-md text-muted-foreground">
+                                    De nouveaux projets sont en cours de
+                                    préparation. Revenez très prochainement pour
+                                    les découvrir.
+                                </p>
+                            </div>
+                        </SlideUp>
+                    )}
                     <div className="grid gap-8 md:grid-cols-2">
                         {projects.map((project) => (
                             <SlideUp key={project.id}>

@@ -21,6 +21,23 @@ export default function BlogIndex({ posts }: Props) {
             />
             <section className="pb-24">
                 <div className="mx-auto max-w-7xl px-4 md:px-0">
+                    {posts.length === 0 && (
+                        <SlideUp>
+                            <div className="flex flex-col items-center gap-4 rounded-2xl border border-dashed border-border/60 bg-slate-50 py-20 text-center dark:bg-slate-900">
+                                <span className="flex size-14 items-center justify-center rounded-full bg-primary/10 text-primary">
+                                    <ArrowRight className="size-6" />
+                                </span>
+                                <h3 className="font-heading text-xl font-bold uppercase">
+                                    Nos articles arrivent bientôt
+                                </h3>
+                                <p className="max-w-md text-muted-foreground">
+                                    Nous préparons de nouveaux contenus. Revenez
+                                    prochainement pour lire nos analyses et
+                                    conseils.
+                                </p>
+                            </div>
+                        </SlideUp>
+                    )}
                     <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
                         {posts.map((post) => (
                             <SlideUp key={post.id}>
