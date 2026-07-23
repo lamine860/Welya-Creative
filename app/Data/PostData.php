@@ -27,12 +27,28 @@ class PostData extends Data
         public Lazy|Collection $tags,
         public Lazy|Author|null $author,
         public Lazy|Category|null $category,
-    ) {
+    ) {}
+
+    public static function fromModel(Post $post): self
+    {
+        return new self(
+            $post->id,
+            $post->title,
+            $post->slug,
+            $post->excerpt ?? '',
+            $post->banner_url,
+            route('blog.show', $post->slug),
+            $post->content,
+            $post->created_at->toDateTimeImmutable(),
+            $post->updated_at->toDateTimeImmutable(),
+            $post->tags,
+            $post->author,
+            $post->category,
+        );
     }
 
     public static function collection(Collection $posts)
     {
-        return $posts->map(fn(Post $post) => self::from($post));
-
+        return $posts->map(fn (Post $post) => self::fromModel($post));
     }
 }

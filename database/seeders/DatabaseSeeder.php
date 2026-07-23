@@ -25,5 +25,11 @@ class DatabaseSeeder extends Seeder
                 'role' => Role::ADMIN->value,
             ]
         );
+
+        $this->call([
+            ProjectSeeder::class,
+            TestimonySeeder::class,
+            BlogSeeder::class,
+        ]);
     }
 }

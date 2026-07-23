@@ -13,8 +13,7 @@ class TestimonyData extends Data
         public string $company,
         public string $message,
         public string $avatar,
-    ) {
-    }
+    ) {}
 
     public static function fromModel(Testimony $testimony): self
     {
@@ -23,8 +22,7 @@ class TestimonyData extends Data
             $testimony->position,
             $testimony->company,
             $testimony->message,
-            $testimony->getFirstMediaUrl(),
+            $testimony->getFirstMediaUrl('avatar'),
         );
     }
-
 }
